@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>13 lời chúc 20/10 — Bốn mùa yêu thương</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-a: #ffdfe8;
+  --bg-b: #fff6f1;
+  --ink: #4b1631;
+  --muted: #8c5a6d;
+  --rose: #c81f59;
+  --chip: #ffffff;
+  --chip-line: #f0c0d0;
+  --paper: #fffaf1;
+  --pt: #5a2a40;
+  --env-back: #c42c5c;
+  --env-front: #ee5f8e;
+  --env-flap: #fb7ea5;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-a: #2d0f33;
+    --bg-b: #170820;
+    --ink: #ffe8f0;
+    --muted: #d9a9c0;
+    --rose: #ff7aa8;
+    --chip: #331338;
+    --chip-line: #5f2a63;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg-a: #2d0f33;
+  --bg-b: #170820;
+  --ink: #ffe8f0;
+  --muted: #d9a9c0;
+  --rose: #ff7aa8;
+  --chip: #331338;
+  --chip-line: #5f2a63;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html {
+  height: 100%;
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+  background: linear-gradient(180deg, var(--bg-a) 0%, var(--bg-b) 100%);
+}
+body {
+  height: 100%;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 38%, rgba(255,255,255,.35), transparent 62%);
+  color: var(--ink);
+  font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  background: var(--bg-a);
+  z-index: 30;
+}
+button { font: inherit; }
+button:focus-visible, .env:focus-visible, .dot:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 3px;
+}
+
+/* ================= Phong bì ================= */
+.intro {
+  position: absolute; inset: 0; z-index: 20;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 34px;
+  transition: opacity .9s ease, visibility .9s;
+}
+.intro.leave { opacity: 0; visibility: hidden; pointer-events: none; }
+.env {
+  position: relative;
+  width: min(86vw, 440px);
+  aspect-ratio: 3 / 2;
+  perspective: 1100px;
+  margin-top: calc(min(86vw, 440px) * .3);
+  cursor: pointer;
+  border-radius: 6px;
+}
+.env-back {
+  position: absolute; inset: 0; border-radius: 6px;
+  background: var(--env-back);
+  box-shadow: 0 26px 50px rgba(120, 10, 60, .28);
+}
+.letter {
+  position: absolute; left: 6%; right: 6%; top: 7%; height: 90%;
+  z-index: 2; border-radius: 5px;
+  background: #fffaf1;
+  padding: 9% 8% 0; text-align: center;
+  box-shadow: 0 2px 10px rgba(80, 10, 40, .18);
+  transition: transform 1.1s cubic-bezier(.22,.9,.25,1) .55s;
+}
+.env.open .letter { transform: translateY(-58%); }
+.lt1 {
+  margin: 0;
+  font-family: "Dancing Script", "Brush Script MT", cursive;
+  font-weight: 700; color: #c81f59;
+  font-size: clamp(24px, 6.4vw, 34px); line-height: 1.25;
+}
+.lt2 { margin: 12px 0 0; color: #8d3a5d; font-size: clamp(13px, 3.4vw, 15px); opacity: 0; transition: opacity .8s ease; }
+.env.open .lt2 { opacity: 1; transition-delay: 3.5s; }
+.lw {
+  display: inline-block; opacity: 0; filter: blur(5px);
+  transition: opacity .2s, filter .2s;
+}
+.env.open .lw {
+  opacity: 1; filter: none;
+  transition: opacity .7s ease calc(1.7s + var(--i) * .22s), filter .7s ease calc(1.7s + var(--i) * .22s);
+}
+.pocket {
+  position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  filter: drop-shadow(0 -2px 3px rgba(90, 0, 45, .28));
+}
+.pocket i {
+  display: block; width: 100%; height: 100%; border-radius: 6px;
+  background: linear-gradient(160deg, var(--env-front), #d94777);
+  clip-path: polygon(0 0, 50% 54%, 100% 0, 100% 100%, 0 100%);
+}
+.flap {
+  position: absolute; left: 0; right: 0; top: 0; height: 54%;
+  z-index: 4; transform-origin: 50% 0; pointer-events: none;
+  transition: transform .85s cubic-bezier(.5,0,.2,1), z-index 0s .42s;
+  filter: drop-shadow(0 4px 4px rgba(90, 0, 45, .25));
+}
+.flap i {
+  display: block; width: 100%; height: 100%;
+  background: linear-gradient(180deg, var(--env-flap), #f0648f);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.env.open .flap { transform: rotateX(180deg); z-index: 1; }
+.seal {
+  position: absolute; left: 50%; top: 54%; z-index: 5;
+  width: 15%; aspect-ratio: 1; border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: grid; place-items: center;
+  background: radial-gradient(circle at 35% 30%, #ff5f89, #ae1040);
+  box-shadow: 0 3px 8px rgba(80, 0, 30, .4), inset 0 -2px 4px rgba(0,0,0,.2);
+  transition: opacity .3s, transform .4s;
+}
+.seal svg { width: 52%; fill: #ffd9e4; }
+.env.open .seal { opacity: 0; transform: translate(-50%, -50%) scale(.6); }
+.env:not(.open) { animation: nudge 2.8s ease-in-out infinite; }
+@keyframes nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+.intro-foot { position: relative; height: 50px; width: 100%; display: grid; place-items: center; }
+.intro-foot > * { grid-area: 1 / 1; }
+.hint { margin: 0; color: var(--muted); font-size: 15px; transition: opacity .4s; }
+.hint.gone { opacity: 0; }
+.cta {
+  border: 0; cursor: pointer; padding: 13px 28px; border-radius: 999px;
+  background: #c81f59; color: #fff; font-weight: 500; font-size: 16px;
+  box-shadow: 0 10px 24px rgba(200, 31, 89, .35);
+  opacity: 0; transform: translateY(8px); pointer-events: none;
+  transition: opacity .7s ease, transform .7s ease;
+}
+.cta.show { opacity: 1; transform: none; pointer-events: auto; }
+
+/* ================= Ứng dụng / Sách ================= */
+.app {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  opacity: 0; visibility: hidden; transition: opacity 1s ease .3s;
+}
+.app.show { opacity: 1; visibility: visible; }
+.stage {
+  position: relative; flex: 1; min-height: 0;
+  display: grid; place-items: center; padding: 14px 12px 2px;
+}
+#fx { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 40; }
+
+.book {
+  --pw: 360px; --ph: 500px; --s: 1;
+  position: relative; perspective: 2600px;
+  transition: transform 1.1s cubic-bezier(.45,.05,.25,1);
+}
+.book.spread.closed { transform: translateX(calc(var(--pw) * -.5)); }
+.book::before {
+  content: ""; position: absolute; left: 3%; right: 3%; bottom: -22px; height: 30px;
+  background: radial-gradient(ellipse at center, rgba(70, 10, 40, .4), transparent 70%);
+  filter: blur(7px); z-index: -1;
+}
+.board {
+  position: absolute; top: -9px; bottom: -9px; z-index: 0; border-radius: 10px;
+  background: linear-gradient(135deg, #b3195a, #8c0e45);
+  box-shadow: 0 18px 40px rgba(60, 10, 40, .32);
+  transition: opacity .6s ease;
+}
+.board.l { left: -9px; width: calc(50% + 9px); }
+.board.r { left: 50%; right: -9px; }
+.book.spread.closed .board.l { opacity: 0; }
+.book.single .board.l { display: none; }
+.book.single .board.r { left: -9px; }
+
+.leaf {
+  position: absolute; top: 0; left: 50%; width: 50%; height: 100%;
+  transform-origin: left center; transform-style: preserve-3d;
+  transition: transform 1.1s cubic-bezier(.45,.05,.25,1);
+}
+.leaf.flipped { transform: rotateY(-180deg); }
+.book.single .leaf { left: 0; width: 100%; transition: transform .95s cubic-bezier(.45,.05,.25,1), opacity .15s linear; }
+.book.single .leaf.flipped { opacity: 0; pointer-events: none; transition: transform .95s cubic-bezier(.45,.05,.25,1), opacity .25s linear .7s; }
+.notrans, .notrans * { transition: none !important; }
+
+.face {
+  position: absolute; inset: 0; overflow: hidden;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+}
+.face.front { border-radius: 3px 9px 9px 3px; }
+.face.back { transform: rotateY(180deg); border-radius: 9px 3px 3px 9px; }
+.face::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; z-index: 9;
+  background: linear-gradient(to right, rgba(60, 10, 30, 0), rgba(60, 10, 30, .38));
+}
+.face.back::after { background: linear-gradient(to left, rgba(60, 10, 30, 0), rgba(60, 10, 30, .38)); }
+.leaf.turning .face::after { animation: shade 1.1s ease; }
+@keyframes shade { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+/* Bìa */
+.cover {
+  cursor: pointer; color: #fff3e0;
+  background: linear-gradient(135deg, #cf2262 0%, #a3124c 60%, #8c0e45 100%);
+}
+.cover::before {
+  content: ""; position: absolute; inset: 14px; border: 1px solid rgba(246, 211, 138, .65); border-radius: 5px;
+}
+.cv-flower { position: absolute; width: 135%; left: -17%; bottom: -24%; opacity: .5; }
+.cv-in {
+  position: absolute; inset: 0; padding: calc(40px * var(--s)) calc(28px * var(--s));
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.cv-small { margin: 0; font-size: calc(14px * var(--s)); color: #f6d38a; letter-spacing: .02em; }
+.cv-title {
+  margin: calc(18px * var(--s)) 0 0;
+  font-family: "Dancing Script", "Brush Script MT", cursive; font-weight: 700;
+  font-size: calc(62px * var(--s)); line-height: 1.02;
+  text-shadow: 0 3px 14px rgba(60, 0, 30, .35);
+}
+.cv-sub { margin: calc(18px * var(--s)) 0 0; font-size: calc(14px * var(--s)); line-height: 1.6; color: #ffd9e5; max-width: 16em; }
+.cv-hint {
+  margin: auto 0 0; font-size: calc(13px * var(--s)); color: #f6d38a;
+  animation: breathe 2.4s ease-in-out infinite;
+}
+@keyframes breathe { 50% { opacity: .35; } }
+
+/* Trang chữ */
+.textpage { background: var(--paper); color: var(--pt); cursor: pointer; }
+.textpage::before {
+  content: ""; position: absolute; inset: 0 auto 0 0; width: 10%; z-index: 3; pointer-events: none;
+  background: linear-gradient(to right, rgba(110, 60, 40, .24), rgba(110, 60, 40, 0));
+}
+.frame {
+  position: absolute; inset: 12px 12px 12px 20px; border: 1px solid rgba(200, 31, 89, .17);
+  border-radius: 4px; pointer-events: none;
+}
+.tp-in {
+  position: absolute; z-index: 2; overflow: hidden;
+  left: calc(38px * var(--s)); right: calc(30px * var(--s)); bottom: calc(26px * var(--s));
+  top: calc(var(--sh, 0px) + 28px * var(--s));
+  display: flex; flex-direction: column;
+}
+.tp-title {
+  margin: 0; font-family: "Dancing Script", "Brush Script MT", cursive; font-weight: 700;
+  color: var(--rose-p, #c81f59); line-height: 1.1;
+  font-size: calc(62px * var(--s) * var(--k, 1));
+}
+.tp-title span { display: inline-block; padding-right: .15em; clip-path: inset(-30% 100% -30% -5%); }
+.textpage.on .tp-title span {
+  clip-path: inset(-30% -10% -30% -5%);
+  transition: clip-path 1.2s cubic-bezier(.5,0,.2,1) .5s;
+}
+.tp-sub {
+  margin: calc(4px * var(--s)) 0 0; font-weight: 500; color: #8d3a5d;
+  font-size: calc(16px * var(--s) * var(--k, 1));
+  opacity: 0; transform: translateY(6px);
+}
+.tp-rule {
+  display: block; width: calc(40px * var(--s)); height: 2px; border-radius: 2px;
+  margin: calc(14px * var(--s)) 0; background: #c81f59; opacity: 0;
+}
+.textpage.on .tp-sub { opacity: 1; transform: none; transition: opacity .7s ease 1.35s, transform .7s ease 1.35s; }
+.textpage.on .tp-rule { opacity: .5; transition: opacity .7s ease 1.45s; }
+.tp-body, .tp-promise { margin: 0; }
+.tp-body { font-size: calc(16.5px * var(--s) * var(--k, 1)); line-height: 1.78; }
+.w, .pw {
+  display: inline-block; opacity: 0; filter: blur(4px); transform: translateY(3px);
+}
+.textpage.on .w {
+  opacity: 1; filter: none; transform: none;
+  transition: opacity .6s ease calc(1.55s + var(--i) * 38ms), filter .6s ease calc(1.55s + var(--i) * 38ms), transform .6s ease calc(1.55s + var(--i) * 38ms);
+}
+.tp-promise {
+  margin-top: calc(14px * var(--s)); text-align: center;
+  font-family: "Dancing Script", "Brush Script MT", cursive; font-weight: 700;
+  color: #c81f59; line-height: 1.22;
+  font-size: calc(31px * var(--s) * var(--k, 1));
+}
+.textpage.on .pw {
+  opacity: 1; filter: none; transform: none;
+  transition: opacity .9s ease calc(var(--pd) + var(--i) * 140ms), filter .9s ease calc(var(--pd) + var(--i) * 140ms), transform .9s ease calc(var(--pd) + var(--i) * 140ms);
+}
+.final .tp-body { font-size: calc(15.5px * var(--s) * var(--k, 1)); line-height: 1.68; }
+.tp-foot {
+  margin-top: auto; padding-top: calc(10px * var(--s));
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  font-size: calc(12.5px * var(--s)); color: #a47488;
+}
+.restart {
+  border: 1px solid rgba(200, 31, 89, .35); background: transparent; color: #c81f59;
+  border-radius: 999px; padding: 5px 13px; cursor: pointer; font-size: calc(12.5px * var(--s)); font-weight: 500;
+}
+.restart:hover { background: rgba(200, 31, 89, .08); }
+
+/* Trang tranh */
+.scenepage { background: #f6dfe4; cursor: pointer; }
+.scenepage::before {
+  content: ""; position: absolute; inset: 0 0 0 auto; width: 11%; z-index: 3; pointer-events: none;
+  background: linear-gradient(to left, rgba(60, 10, 30, .3), rgba(60, 10, 30, 0));
+}
+.face canvas { display: block; width: 100%; height: 100%; }
+.sp-scene {
+  position: absolute; z-index: 1; left: 10px; right: 10px; top: 10px;
+  height: calc(var(--sh) - 10px); border-radius: 12px; overflow: hidden;
+  box-shadow: 0 2px 8px rgba(80, 10, 40, .2);
+}
+.blank { background: var(--paper); }
+.blank::before {
+  content: ""; position: absolute; inset: 0 0 0 auto; width: 11%;
+  background: linear-gradient(to left, rgba(110, 60, 40, .24), rgba(110, 60, 40, 0));
+}
+
+/* Thanh điều khiển */
+.bar { display: flex; align-items: center; justify-content: center; gap: 14px; padding: 8px 12px 16px; }
+.nb {
+  flex: none; width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+  display: grid; place-items: center; color: var(--ink);
+  background: var(--chip); border: 1px solid var(--chip-line);
+}
+.nb:disabled { opacity: .3; cursor: default; }
+.nb svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.mid { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 0; }
+.dots { display: flex; }
+.dot { position: relative; width: 17px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; }
+.dot::before {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 8px; height: 8px; margin: -4px 0 0 -4px;
+  border-radius: 50%; background: var(--chip-line); transition: transform .3s, background .3s;
+}
+.dot.vis::before { background: var(--rose); opacity: .5; }
+.dot.cur::before { background: var(--rose); opacity: 1; transform: scale(1.5); }
+.label { font-size: 13px; color: var(--muted); min-height: 18px; text-align: center; }
+@media (max-width: 480px) { .dot { width: 13px; } .bar { gap: 8px; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .leaf, .book, .book.single .leaf { transition-duration: .01s !important; }
+  .env:not(.open), .cv-hint { animation: none; }
+  .w, .pw, .lw, .tp-title span, .tp-sub, .tp-rule, .lt2 { transition: none !important; }
+  .textpage.on .tp-title span, .textpage.on .w, .textpage.on .pw, .textpage.on .tp-sub { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Trang mở đầu: bức thư bí mật -->
+<section class="intro" id="intro">
+  <div class="env" id="env" role="button" tabindex="0" aria-label="Chạm để mở phong bì">
+    <div class="env-back"></div>
+    <div class="letter">
+      <p class="lt1" id="lt1"></p>
+      <p class="lt2">13 lời chúc đang chờ bạn bên trong.</p>
+    </div>
+    <div class="pocket"><i></i></div>
+    <div class="flap"><i></i></div>
+    <div class="seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.7 1.1 4.6 2.7h2C13.9 6.1 15.6 5 17.6 5 21 5 23.1 8.4 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg></div>
+  </div>
+  <div class="intro-foot">
+    <p class="hint" id="hint">Chạm vào phong bì để mở thư</p>
+    <button class="cta" id="cta" type="button">Mở cuốn sách</button>
+  </div>
+</section>
+
+<!-- Cuốn sách 13 trang -->
+<main class="app" id="app">
+  <div class="stage" id="stage">
+    <div class="book spread closed" id="book"></div>
+    <canvas id="fx"></canvas>
+  </div>
+  <div class="bar">
+    <button class="nb" id="prev" type="button" aria-label="Trang trước"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="mid">
+      <div class="dots" id="dots"></div>
+      <div class="label" id="label" aria-live="polite"></div>
+    </div>
+    <button class="nb" id="next" type="button" aria-label="Trang sau"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+</main>
+
+<script>
+(() => {
+'use strict';
+const TAU = Math.PI * 2;
+const rnd = (a, b) => a + Math.random() * (b - a);
+const pick = a => a[Math.floor(Math.random() * a.length)];
+const clamp01 = v => Math.max(0, Math.min(1, v));
+const easeOut = t => 1 - Math.pow(1 - t, 3);
+const easeBack = t => { const c = 1.70158; return 1 + (c + 1) * Math.pow(t - 1, 3) + c * Math.pow(t - 1, 2); };
+const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+const speed = reduce ? 0.35 : 1;
+const N = 13;
+const $ = s => document.querySelector(s);
+const el = (t, c) => { const e = document.createElement(t); if (c) e.className = c; return e; };
+
+/* ---------- Nội dung ---------- */
+const WISHES = [
+['Xuân', 'Mong nàng luôn rực rỡ', 'Chúc những người phụ nữ luôn mang trong tim sắc xuân dịu dàng, dù tháng năm có đổi thay vẫn giữ được nét tươi trẻ và niềm tin vào cuộc sống. Mong mỗi ngày của bạn đều nở hoa, mỗi ước mơ đều có ngày đơm trái ngọt.'],
+['Hạ', 'Mong nàng luôn tỏa sáng', 'Chúc bạn có một mùa hè rực rỡ như nắng vàng, luôn tự tin theo đuổi những điều khiến trái tim mình hạnh phúc. Mong nhiệt huyết trong bạn chẳng bao giờ tắt và cuộc đời luôn trao cho bạn những ngày đầy nắng.'],
+['Thu', 'Mong nàng bình yên', 'Chúc bạn có một tâm hồn dịu dàng như mùa thu, biết yêu thương người khác nhưng cũng luôn dành cho bản thân những điều tốt đẹp. Mong mọi bộn bề sẽ nhẹ nhàng qua đi, để trong tim bạn chỉ còn lại bình yên và những niềm vui giản dị.'],
+['Đông', 'Mong nàng luôn được yêu thương', 'Chúc bạn giữa những ngày lạnh giá vẫn luôn có một vòng tay ấm áp, một người sẵn lòng lắng nghe và những điều nhỏ bé khiến mình mỉm cười. Mong trái tim bạn dù trải qua bao mùa đông vẫn luôn ấm áp và tràn đầy hy vọng.'],
+['Hoa', 'Mong nàng luôn được trân trọng', 'Chúc bạn như một đóa hoa mang vẻ đẹp riêng, chẳng cần so sánh với bất kỳ ai vẫn luôn rực rỡ theo cách của mình. Mong bạn được nâng niu không chỉ bởi vẻ ngoài, mà còn bởi trái tim đẹp và những điều tử tế bạn trao đi.'],
+['Trăng', 'Mong nàng luôn tỏa sáng', 'Chúc bạn luôn là ánh trăng dịu dàng giữa cuộc đời rộng lớn, không cần chói chang vẫn đủ sức làm đẹp cho thế giới quanh mình. Dẫu có những đêm tối, mong bạn vẫn tin rằng ánh sáng bên trong mình chưa bao giờ biến mất.'],
+['Biển', 'Mong nàng tự do', 'Chúc bạn có tâm hồn rộng mở như biển cả, đủ bao dung để yêu thương và đủ mạnh mẽ để vượt qua những con sóng lớn. Mong bạn luôn tự do lựa chọn con đường mình muốn đi và can đảm sống một cuộc đời thật sự thuộc về mình.'],
+['Mây', 'Mong nàng nhẹ lòng', 'Chúc bạn có những ngày nhẹ nhàng như mây trôi, không phải gồng mình mạnh mẽ trước mọi điều và cũng chẳng cần làm hài lòng tất cả mọi người. Mong những muộn phiền sớm tan đi, nhường chỗ cho sự an nhiên và nụ cười thật lòng.'],
+['Bình minh', 'Mong nàng luôn có khởi đầu mới', 'Chúc mỗi sớm mai đều mang đến cho bạn một lý do để hy vọng, một cơ hội để trưởng thành và một điều gì đó đáng mong chờ. Dù hôm qua có mệt mỏi đến đâu, mong ngày mai vẫn mở ra trước mắt bạn những chân trời tươi sáng.'],
+['Hoàng hôn', 'Mong nàng biết yêu chính mình', 'Chúc bạn hiểu rằng không phải lúc nào rực rỡ nhất mới là đẹp, bởi ngay cả hoàng hôn cũng có vẻ đẹp khiến người ta lưu luyến. Mong bạn luôn biết trân trọng bản thân, kể cả trong những ngày bình thường, mệt mỏi và chưa hoàn hảo.'],
+['Bướm', 'Mong nàng tự tin thay đổi', 'Chúc bạn luôn đủ dũng cảm để bước ra khỏi những giới hạn cũ và hóa thành phiên bản mà mình hằng mong muốn. Mong bạn nhớ rằng những tháng ngày khó khăn không làm bạn kém đi, mà có thể chính là đôi cánh đưa bạn đến những chân trời mới.'],
+['Ánh sáng', 'Mong nàng gặp nhiều may mắn', 'Chúc con đường bạn đi luôn có những ánh đèn dẫn lối, những người tốt đồng hành và những cơ hội đến đúng lúc. Mong những điều tử tế bạn trao đi sẽ quay trở lại, biến cuộc sống của bạn thành một hành trình thật đáng yêu.'],
+['Yêu thương', 'Mong nàng hạnh phúc trọn vẹn', 'Nhân ngày 20/10, chúc tất cả những người phụ nữ luôn được yêu thương, được tôn trọng và được sống đúng với điều trái tim mình mong muốn. Mong bạn có đủ sức khỏe để đi xa, đủ bản lĩnh để theo đuổi ước mơ và đủ bình yên để nhận ra rằng bản thân luôn xứng đáng với hạnh phúc.']
+];
+const PROMISE = 'Bạn xứng đáng được yêu thương mỗi ngày, không chỉ riêng 20/10';
+
+const wordsHTML = (str, cls) => str.split(' ').map((w, i) => `<span class="${cls}" style="--i:${i}">${w}</span>`).join(' ');
+
+/* ---------- Hàm vẽ ---------- */
+function vgrad(ctx, w, h, stops, y0 = 0, y1 = h) {
+  const g = ctx.createLinearGradient(0, y0, 0, y1);
+  stops.forEach(([o, c]) => g.addColorStop(o, c));
+  ctx.fillStyle = g; ctx.fillRect(0, y0, w, y1 - y0);
+}
+function hill(ctx, w, h, y, amp, color, ph = 0, k = 1) {
+  ctx.beginPath(); ctx.moveTo(0, h);
+  for (let x = 0; x <= w + 6; x += 6) ctx.lineTo(x, y + Math.sin(x / w * TAU * k + ph) * amp);
+  ctx.lineTo(w, h); ctx.closePath(); ctx.fillStyle = color; ctx.fill();
+}
+function glow(ctx, x, y, r, c0, c1 = 'rgba(255,255,255,0)') {
+  const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+  g.addColorStop(0, c0); g.addColorStop(1, c1);
+  ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill();
+}
+function petal(ctx, s, color) {
+  ctx.fillStyle = color; ctx.beginPath(); ctx.moveTo(0, -s);
+  ctx.bezierCurveTo(s * .9, -s * .6, s * .7, s * .6, 0, s);
+  ctx.bezierCurveTo(-s * .7, s * .6, -s * .9, -s * .6, 0, -s); ctx.fill();
+}
+function leaf(ctx, s, color) {
+  ctx.fillStyle = color; ctx.beginPath(); ctx.moveTo(0, -s);
+  ctx.quadraticCurveTo(s * .95, -s * .1, 0, s); ctx.quadraticCurveTo(-s * .95, -s * .1, 0, -s); ctx.fill();
+  ctx.strokeStyle = 'rgba(60,20,10,.25)'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(0, -s); ctx.lineTo(0, s); ctx.stroke();
+}
+function heart(ctx, s, color) {
+  ctx.fillStyle = color; ctx.beginPath(); ctx.moveTo(0, s * .9);
+  ctx.bezierCurveTo(-s * 1.3, -s * .1, -s * .7, -s * 1.1, 0, -s * .35);
+  ctx.bezierCurveTo(s * .7, -s * 1.1, s * 1.3, -s * .1, 0, s * .9); ctx.fill();
+}
+function sparkle(ctx, s, color) {
+  ctx.fillStyle = color; ctx.beginPath(); ctx.moveTo(0, -s);
+  ctx.quadraticCurveTo(0, 0, s, 0); ctx.quadraticCurveTo(0, 0, 0, s);
+  ctx.quadraticCurveTo(0, 0, -s, 0); ctx.quadraticCurveTo(0, 0, 0, -s); ctx.fill();
+}
+function flower(ctx, r, n, c1, c2, open = 1, cr = .22, pw = .3) {
+  if (open <= 0) return;
+  for (let i = 0; i < n; i++) {
+    ctx.save(); ctx.rotate(i / n * TAU); ctx.translate(0, -r * .55 * open);
+    ctx.beginPath(); ctx.ellipse(0, 0, r * pw * open, r * .5 * open, 0, 0, TAU);
+    ctx.fillStyle = c1; ctx.fill(); ctx.restore();
+  }
+  if (cr > 0) { ctx.beginPath(); ctx.arc(0, 0, r * cr * open, 0, TAU); ctx.fillStyle = c2; ctx.fill(); }
+}
+function cloud(ctx, s, color) {
+  ctx.fillStyle = color; ctx.beginPath();
+  [[0, 0, .5], [-.8, .12, .36], [.85, .15, .4], [.35, -.3, .42], [-.35, -.22, .34]].forEach(([x, y, r]) => { ctx.moveTo(x * s + r * s, y * s); ctx.arc(x * s, y * s, r * s, 0, TAU); });
+  ctx.fill();
+  ctx.fillRect(-.8 * s, .12 * s, 1.65 * s, .3 * s);
+}
+function butterfly(ctx, s, c1, c2, ph) {
+  const k = .25 + .75 * Math.abs(Math.sin(ph));
+  for (const side of [-1, 1]) {
+    ctx.save(); ctx.scale(side * k, 1);
+    ctx.fillStyle = c1; ctx.beginPath(); ctx.ellipse(s * .55, -s * .3, s * .6, s * .42, -.5, 0, TAU); ctx.fill();
+    ctx.fillStyle = c2; ctx.beginPath(); ctx.ellipse(s * .4, s * .38, s * .38, s * .3, .5, 0, TAU); ctx.fill();
+    ctx.restore();
+  }
+  ctx.fillStyle = '#5a2a40'; ctx.beginPath(); ctx.ellipse(0, 0, s * .07, s * .5, 0, 0, TAU); ctx.fill();
+  ctx.strokeStyle = '#5a2a40'; ctx.lineWidth = 1; ctx.beginPath();
+  ctx.moveTo(0, -s * .45); ctx.lineTo(-s * .2, -s * .75); ctx.moveTo(0, -s * .45); ctx.lineTo(s * .2, -s * .75); ctx.stroke();
+}
+function bird(ctx, s, ph, color) {
+  const f = Math.sin(ph);
+  ctx.strokeStyle = color; ctx.lineWidth = Math.max(1.5, s * .13); ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.moveTo(-s, -s * .2 * f);
+  ctx.quadraticCurveTo(-s * .4, -s * .6 * f - s * .1, 0, 0);
+  ctx.quadraticCurveTo(s * .4, -s * .6 * f - s * .1, s, -s * .2 * f); ctx.stroke();
+}
+function fir(ctx, x, y, s) {
+  ctx.fillStyle = '#2e5c5a';
+  for (let i = 0; i < 3; i++) {
+    const w = s * (.5 - i * .1), top = y - s * (.5 + i * .32), bot = y - s * (i * .32);
+    ctx.beginPath(); ctx.moveTo(x, top); ctx.lineTo(x + w, bot); ctx.lineTo(x - w, bot); ctx.closePath(); ctx.fill();
+  }
+  ctx.fillStyle = '#f4f8ff'; ctx.beginPath(); ctx.moveTo(x, y - s * 1.14); ctx.lineTo(x + s * .12, y - s * .92); ctx.lineTo(x - s * .12, y - s * .92); ctx.fill();
+}
+const PINKS = ['#ff4f81', '#ff7aa2', '#ff9fbd', '#e63e6d', '#ffb3c8'];
+
+/* ---------- Các cảnh ---------- */
+const birdGroup = (n, color, y0, y1) => ({
+  n,
+  make: (sc, init) => ({ x: init ? rnd(0, sc.w) : -40, y: rnd(y0, y1) * sc.h, vx: rnd(24, 46), vy: 0, s: sc.u * rnd(.03, .045), sw: 0, ph: rnd(0, TAU), fr: rnd(5, 8), m: 90 }),
+  draw: (ctx, p) => bird(ctx, p.s, p.t * p.fr + p.ph, color)
+});
+const sparkGroup = (n, color, vy0, vy1) => ({
+  n,
+  make: (sc, init) => ({ x: rnd(0, sc.w), y: init ? rnd(0, sc.h) : sc.h + 10, vx: rnd(-5, 5), vy: -rnd(vy0, vy1), s: rnd(3, 6.5), sw: 8, sf: rnd(1, 2), vr: rnd(-.5, .5) }),
+  draw: (ctx, p) => { ctx.globalAlpha *= .35 + .65 * Math.abs(Math.sin(p.t * p.sf * 1.4 + p.ph)); sparkle(ctx, p.s, color); }
+});
+
+const SCENES = [
+/* 1 Xuân */
+{ init(sc) { sc.d = { bl: Array.from({ length: 9 }, (_, i) => ({ t: i / 8, r: rnd(.026, .04), ph: rnd(0, TAU), o: rnd(-.02, .03) })) }; },
+  bg(ctx, sc, w, h) {
+    vgrad(ctx, w, h, [[0, '#ffdfe9'], [.55, '#fff4ea'], [1, '#e1f4d3']]);
+    glow(ctx, w * .2, h * .2, sc.u * .55, 'rgba(255,255,255,.75)');
+    const bx = t => w * (1.03 - .66 * t), by = t => h * (.06 + .17 * t + .05 * Math.sin(t * 3));
+    ctx.strokeStyle = '#7b4a3c'; ctx.lineWidth = Math.max(3, sc.u * .016); ctx.lineCap = 'round'; ctx.beginPath();
+    for (let t = 0; t <= 1.001; t += .05) t === 0 ? ctx.moveTo(bx(t), by(t)) : ctx.lineTo(bx(t), by(t));
+    ctx.stroke();
+    for (const b of sc.d.bl) {
+      ctx.save(); ctx.translate(bx(b.t), by(b.t) + b.o * h);
+      const k = 1 + .06 * Math.sin(sc.time * 1.3 + b.ph); ctx.scale(k, k); ctx.rotate(b.ph);
+      flower(ctx, sc.u * b.r * 2, 5, '#ffb3cb', '#ffd45e', 1, .2, .34); ctx.restore();
+    }
+    hill(ctx, w, h, h * .84, h * .025, '#c4e7b4', 0, 1.3); hill(ctx, w, h, h * .9, h * .02, '#a7d99b', 2, 1.7);
+  },
+  groups: [{ n: 16, make: (sc, init) => ({ x: rnd(0, sc.w), y: init ? rnd(-20, sc.h) : rnd(-30, -10), vx: rnd(-6, 6), vy: rnd(28, 55), s: rnd(6, 11), sw: 26, sf: rnd(1, 2), vr: rnd(-1.5, 1.5), c: pick(['#ff9fbd', '#ffc2d4', '#ffb3c8', '#fff0f4']) }),
+    draw: (ctx, p) => { ctx.scale(1, .5 + .5 * Math.abs(Math.cos(p.t * p.sf))); petal(ctx, p.s, p.c); } }]
+},
+/* 2 Hạ */
+{ init(sc) { sc.d = { fl: [.14, .37, .63, .86].map((x, i) => ({ x, hh: [.42, .3, .38, .26][i], r: [.085, .075, .08, .07][i], ph: i * 1.7 })) }; },
+  bg(ctx, sc, w, h) {
+    vgrad(ctx, w, h, [[0, '#ffe9a0'], [.5, '#ffd278'], [1, '#ffa862']]);
+    const cx = w * .5, cy = h * .3, R = sc.u * .16;
+    glow(ctx, cx, cy, R * 3.4, 'rgba(255,244,190,.75)');
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(sc.time * .15);
+    ctx.strokeStyle = 'rgba(255,247,200,.6)'; ctx.lineCap = 'round'; ctx.lineWidth = Math.max(3, R * .12);
+    for (let i = 0; i < 16; i++) { ctx.rotate(TAU / 16); ctx.beginPath(); ctx.moveTo(0, -R * 1.35); ctx.lineTo(0, -R * (i % 2 ? 1.9 : 2.3)); ctx.stroke(); }
+    ctx.restore();
+    const g = ctx.createRadialGradient(cx - R * .2, cy - R * .2, R * .1, cx, cy, R);
+    g.addColorStop(0, '#fffbd6'); g.addColorStop(1, '#ffc93c');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R, 0, TAU); ctx.fill();
+    hill(ctx, w, h, h * .9, h * .015, '#9ccf6a', 0, 1.2);
+    for (const f of sc.d.fl) {
+      const sway = Math.sin(sc.time * 1.2 + f.ph) * .05, bx = f.x * w, by = h;
+      const tx = bx + Math.sin(sway) * h * f.hh, ty = by - h * f.hh;
+      ctx.strokeStyle = '#5e9c3f'; ctx.lineWidth = Math.max(3, sc.u * .014); ctx.beginPath();
+      ctx.moveTo(bx, by); ctx.quadraticCurveTo(bx, (by + ty) / 2, tx, ty); ctx.stroke();
+      ctx.save(); ctx.translate(tx, ty); ctx.rotate(sway); flower(ctx, sc.u * f.r, 14, '#ffc21a', '#7a4a22', 1, .38, .17); ctx.restore();
+    }
+  },
+  groups: [sparkGroup(22, '#fffbe0', 14, 38)]
+},
+/* 3 Thu */
+{ init(sc) {
+    const br = [[.2, .5, .08, .36, .018], [.2, .56, .34, .4, .018], [.2, .46, .22, .28, .016], [.34, .4, .4, .33, .01], [.08, .36, .03, .3, .01]];
+    sc.d = { br, lv: [] };
+    br.forEach(b => { for (let i = 0; i < 3; i++) sc.d.lv.push({ x: b[2] + rnd(-.04, .04), y: b[3] + rnd(-.04, .04), c: pick(['#e0662a', '#f2a03a', '#c2412b', '#f5c04a']), r: rnd(-1, 1), ph: rnd(0, TAU) }); });
+  },
+  bg(ctx, sc, w, h) {
+    vgrad(ctx, w, h, [[0, '#ffe6c4'], [.6, '#f9b57a'], [1, '#e08550']]);
+    glow(ctx, w * .72, h * .26, sc.u * .32, 'rgba(255,247,225,.9)');
+    ctx.fillStyle = '#fff4dc'; ctx.beginPath(); ctx.arc(w * .72, h * .26, sc.u * .07, 0, TAU); ctx.fill();
+    hill(ctx, w, h, h * .8, h * .03, '#c9743f', 1, 1.1); hill(ctx, w, h, h * .88, h * .025, '#a35a30', 3, 1.6);
+    ctx.strokeStyle = '#5a3224'; ctx.lineCap = 'round';
+    ctx.lineWidth = sc.u * .035; ctx.beginPath(); ctx.moveTo(w * .18, h); ctx.lineTo(w * .2, h * .5); ctx.stroke();
+    for (const b of sc.d.br) { ctx.lineWidth = sc.u * b[4]; ctx.beginPath(); ctx.moveTo(b[0] * w, b[1] * h); ctx.lineTo(b[2] * w, b[3] * h); ctx.stroke(); }
+    for (const l of sc.d.lv) { ctx.save(); ctx.translate(l.x * w, l.y * h); ctx.rotate(l.r + Math.sin(sc.time * 1.5 + l.ph) * .15); leaf(ctx, sc.u * .035, l.c); ctx.restore(); }
+  },
+  groups: [{ n: 16, make: (sc, init) => ({ x: rnd(0, sc.w), y: init ? rnd(-20, sc.h) : rnd(-30, -10), vx: rnd(-8, 8), vy: rnd(35, 70), s: rnd(9, 15), sw: 44, sf: rnd(1, 2), vr: rnd(-1.2, 1.2), c: pick(['#e0662a', '#f2a03a', '#c2412b', '#f5c04a', '#b8561e']) }),
+    draw: (ctx, p) => { ctx.scale(1, .45 + .55 * Math.abs(Math.cos(p.t * p.sf * 1.3))); leaf(ctx, p.s, p.c); } }]
+},
+/* 4 Đông */
+{ init(sc) { sc.d = { st: Array.from({ length: 30 }, () => ({ x: rnd(0, 1), y: rnd(0, .45), r: rnd(.6, 1.6), ph: rnd(0, TAU) })) }; },
+  bg(ctx, sc, w, h) {
+    vgrad(ctx, w, h, [[0, '#1f2b5a'], [.55, '#5a78b4'], [1, '#d9e6fa']]);
+    for (const s of sc.d.st) { ctx.fillStyle = `rgba(255,255,255,${.3 + .6 * Math.abs(Math.sin(sc.time * 1.2 + s.ph))})`; ctx.beginPath(); ctx.arc(s.x * w, s.y * h, s.r, 0, TAU); ctx.fill(); }
+    hill(ctx, w, h, h * .62, h * .06, 'rgba(190,208,238,.8)', 1, 1.2);
+    hill(ctx, w, h, h * .78, h * .03, '#f2f7ff', 0, 1.1); hill(ctx, w, h, h * .88, h * .025, '#e1ebfb', 2.5, 1.5);
+    fir(ctx, w * .14, h * .86, sc.u * .26); fir(ctx, w * .27, h * .9, sc.u * .19);
+    const hx = w * .68, hy = h * .86, hw = sc.u * .24, hh = sc.u * .14;
+    ctx.fillStyle = '#8a5568'; ctx.fillRect(hx - hw / 2, hy - hh, hw, hh);
+    ctx.fillStyle = '#f6f9ff'; ctx.beginPath(); ctx.moveTo(hx - hw * .62, hy - hh); ctx.lineTo(hx, hy - hh * 1.65); ctx.lineTo(hx + hw * .62, hy - hh); ctx.closePath(); ctx.fill();
+    glow(ctx, hx, hy - hh * .5, sc.u * .14, 'rgba(255,210,120,.75)');
+    ctx.fillStyle = '#ffd68a'; ctx.fillRect(hx - hw * .14, hy - hh * .75, hw * .28, hh * .5);
+  },
+  groups: [{ n: 44, make: (sc, init) => ({ x: rnd(0, sc.w), y: init ? rnd(0, sc.h) : -8, vx: rnd(-8, 8), vy: rnd(22, 55), s: rnd(1.4, 3.8), sw: 10, sf: rnd(.8, 2) }),
+    draw: (ctx, p) => { ctx.fillStyle = 'rgba(255,255,255,.95)'; ctx.beginPath(); ctx.arc(0, 0, p.s, 0, TAU); ctx.fill(); } }]
+},
+/* 5 Hoa */
+{ bg(ctx, sc, w, h) {
+    vgrad(ctx, w, h, [[0, '#fff3f6'], [1, '#ffd9e7']]);
+    glow(ctx, w * .5, h * .42, sc.u * .6, 'rgba(255,255,255,.85)');
+    const e = easeBack(clamp01((sc.age - .2) / 2.2)), cx = w * .5, cy = h * .42, R = sc.u * .3;
+    const sg = easeOut(clamp01(sc.age / 1.2)), top = h - (h - cy) * sg;
+    ctx.strokeStyle = '#5fa05a'; ctx.lineWidth = sc.u * .02; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(cx, h); ctx.quadraticCurveTo(cx + sc.u * .03, (h + top) / 2, cx, top); ctx.stroke();
+    for (const side of [-1, 1]) { ctx.save(); ctx.translate(cx, h - (h - cy) * .5 * sg); ctx.rotate(side * 1.0); ctx.translate(0, -sc.u * .09 * sg); leaf(ctx, sc.u * .12 * sg, '#79b873'); ctx.restore(); }
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(Math.sin(sc.time * .5) * .05);
+    flower(ctx, R, 9, '#ff7fa8', '#ffcf5a', e, 0, .33); ctx.rotate(TAU / 18);
+    flower(ctx, R * .72, 9, '#ffb0c9', '#ffcf5a', e, .28, .3); ctx.restore();
+  },
+  groups: [{ n: 9, make: (sc, init) => ({ x: rnd(0, sc.w), y: init ? rnd(-20, sc.h) : -20, vx: rnd(-6, 6), vy: rnd(25, 45), s: rnd(6, 10), sw: 24, sf: rnd(1, 2), vr: rnd(-1.5, 1.5), c: pick(['#ff9fbd', '#ffc2d4', '#ffb3c8']) }),
+    draw: (ctx, p) => { ctx.scale(1, .5 + .5 * Math.abs(Math.cos(p.t * p.sf))); petal(ctx, p.s, p.c); } }]
+},
+/* 6 Trăng */
+{ init(sc) { sc.d = { st: Array.from({ length: 50 }, () => ({ x: rnd(0, 1), y: rnd(0, .8), r: rnd(.6, 1.8), ph: rnd(0, TAU) })), next: 2, sh: null }; },
+  bg(ctx, sc, w, h) {
+    vgrad(ctx, w, h, [[0, '#10163a'], [.55, '#2b2a6b'], [1, '#5c3f86']]);
+    for (const s of sc.d.st) { ctx.fillStyle = `rgba(255,248,225,${.25 + .7 * Math.abs(Math.sin(sc.time * 1.1 + s.ph))})`; ctx.beginPath(); ctx.arc(s.x * w, s.y * h, s.r, 0, TAU); ctx.fill(); }
+    const mx = w * .5, my = h * .36, R = sc.u * .16;
+    glow(ctx, mx, my, R * 3.4, 'rgba(255,244,200,.38)');
+    const g = ctx.createRadialGradient(mx - R * .3, my - R * .3, R * .1, mx, my, R);
+    g.addColorStop(0, '#fffbe6'); g.addColorStop(1, '#f2e4b0');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(mx, my, R, 0, TAU); ctx.fill();
+    ctx.fillStyle = 'rgba(210,190,140,.3)';
+    [[-.3, -.2, .2], [.25, .15, .26], [-.1, .4, .14], [.4, -.4, .1]].forEach(([x, y, r]) => { ctx.beginPath(); ctx.arc(mx + x * R, my + y * R, r * R, 0, TAU); ctx.fill(); });
+  },
+  groups: [{ n: 3, make: (sc, init) => ({ x: init ? rnd(0, sc.w) : -sc.w * .4, y: rnd(.58, .88) * sc.h, vx: rnd(5, 10), vy: 0, s: rnd(.22, .34) * sc.w, m: sc.w }),
+    draw: (ctx, p) => cloud(ctx, p.s, 'rgba(190,180,255,.22)') }],
+  fg(ctx, sc, w, h) {
+    const d = sc.d;
+    if (!d.sh && sc.time > d.next) { d.sh = { x: rnd(.5, .95) * w, y: rnd(.04, .25) * h, t: 0 }; d.next = sc.time + rnd(4, 8); }
+    if (d.sh) {
+      d.sh.t += sc.dt; const k = d.sh.t / .9;
+      if (k >= 1) d.sh = null;
+      else {
+        const x = d.sh.x - k * w * .4, y = d.sh.y + k * h * .25;
+        const g = ctx.createLinearGradient(x, y, x + 70, y - 44);
+        g.addColorStop(0, `rgba(255,255,255,${1 - k})`); g.addColorStop(1, 'rgba(255,255,255,0)');
+        ctx.strokeStyle = g; ctx.lineWidth = 2; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + 70, y - 44); ctx.stroke();
+      }
+    }
+  }
+},
+/* 7 Biển */
+{ bg(ctx, sc, w, h) {
+    const hz = h * .5;
+    vgrad(ctx, w, h, [[0, '#8fd3ee'], [1, '#ffefd0']], 0, hz);
+    glow(ctx, w * .5, hz, sc.u * .38, 'rgba(255,244,200,.9)');
+    ctx.fillStyle = '#fff6cf'; ctx.beginPath(); ctx.arc(w * .5, hz - sc.u * .02, sc.u * .09, 0, TAU); ctx.fill();
+    vgrad(ctx, w, h, [[0, '#6fcfe0'], [1, '#1c78a6']], hz, h);
+    const cols = ['rgba(120,215,230,.55)', 'rgba(70,170,210,.6)', 'rgba(40,130,180,.7)', 'rgba(24,100,150,.85)'];
+    for (let i = 0; i < 4; i++) {
+      ctx.beginPath(); ctx.moveTo(0, h);
+      for (let x = 0; x <= w + 6; x += 6) ctx.lineTo(x, hz + h * (.06 + i * .1) + Math.sin(x / w * TAU * (1.5 + i * .4) + sc.time * (.9 + i * .3) * (i % 2 ? -1 : 1)) * h * (.012 + i * .006));
+      ctx.lineTo(w, h); ctx.closePath(); ctx.fillStyle = cols[i]; ctx.fill();
+    }
+  },
+  groups: [birdGroup(3, '#ffffff', .1, .35), {
+    n: 18, stay: true,
+    make: sc => ({ x: sc.w * (.5 + rnd(-.18, .18)), y: sc.h * rnd(.54, .85), s: rnd(2.5, 5.5), ph: rnd(0, TAU), sf: rnd(1.5, 3), m: 400 }),
+    draw: (ctx, p) => { ctx.globalAlpha *= .2 + .8 * Math.abs(Math.sin(p.t * p.sf + p.ph)); sparkle(ctx, p.s, '#ffffff'); }
+  }],
+  burstGroup: 1
+},
+/* 8 Mây */
+{ bg(ctx, sc, w, h) {
+    vgrad(ctx, w, h, [[0, '#8ccbff'], [.6, '#d8f0ff'], [1, '#fff8fb']]);
+    glow(ctx, w * .8, h * .12, sc.u * .45, 'rgba(255,250,225,.85)');
+  },
+  groups: [{ n: 7, make: (sc, init) => { const s = rnd(sc.w * .14, sc.w * .27); return { x: init ? rnd(0, sc.w) : -s * 1.6, y: rnd(.08, .85) * sc.h, vx: 4 + s * .07, vy: 0, s, m: s * 2 }; },
+    draw: (ctx, p) => { ctx.save(); ctx.translate(0, 5); cloud(ctx, p.s, 'rgba(140,180,225,.35)'); ctx.restore(); cloud(ctx, p.s, 'rgba(255,255,255,.95)'); } },
+    sparkGroup(12, '#ffffff', 4, 12)],
+  burstGroup: 1
+},
+/* 9 Bình minh */
+{ bg(ctx, sc, w, h) {
+    const hz = h * .66, R = sc.u * .13, k = easeOut(clamp01(sc.age / 4));
+    const cx = w * .5, cy = hz + R * 1.1 - k * (R * 1.1 + h * .28);
+    vgrad(ctx, w, h, [[0, '#6f9ae6'], [.45, '#f7b6b0'], [.8, '#ffe1a6'], [1, '#ffe1a6']]);
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(sc.time * .05); ctx.fillStyle = `rgba(255,238,190,${.05 + .12 * k})`;
+    for (let i = 0; i < 12; i++) { ctx.rotate(TAU / 12); ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-sc.u * .07, -h * 1.2); ctx.lineTo(sc.u * .07, -h * 1.2); ctx.fill(); }
+    ctx.restore();
+    glow(ctx, cx, cy, R * 3.3, 'rgba(255,236,170,.85)');
+    const g = ctx.createRadialGradient(cx, cy, R * .1, cx, cy, R); g.addColorStop(0, '#fff6c8'); g.addColorStop(1, '#ffbe5a');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R, 0, TAU); ctx.fill();
+    hill(ctx, w, h, hz + h * .02, h * .02, '#8b7fc0', 0, 1.2);
+    vgrad(ctx, w, h, [[0, 'rgba(255,225,190,0)'], [1, 'rgba(255,225,190,.55)']], hz - h * .12, hz + h * .04);
+    hill(ctx, w, h, hz + h * .1, h * .025, '#6a5fa6', 2, 1.8); hill(ctx, w, h, hz + h * .2, h * .02, '#4b4388', 4, 1.4);
+  },
+  groups: [birdGroup(3, '#5a4a8a', .15, .4), sparkGroup(14, '#fff0c8', 6, 16)],
+  burstGroup: 1
+},
+/* 10 Hoàng hôn */
+{ bg(ctx, sc, w, h) {
+    const hz = h * .6, R = sc.u * .14, cx = w * .5, cy = hz - R * .55 + clamp01(sc.age / 10) * R * 1.1;
+    vgrad(ctx, w, h, [[0, '#35195a'], [.5, '#b9386f'], [1, '#ff9b5c']], 0, hz);
+    ctx.fillStyle = 'rgba(255,170,150,.3)';
+    [[.25, .22, .3], [.7, .32, .26], [.45, .42, .34]].forEach(([x, y, s], i) => { ctx.beginPath(); ctx.ellipse(w * x + Math.sin(sc.time * .2 + i) * 14, h * y, w * s * .5, h * .012, 0, 0, TAU); ctx.fill(); });
+    glow(ctx, cx, cy, R * 3.6, 'rgba(255,190,120,.7)');
+    const g = ctx.createRadialGradient(cx, cy, R * .1, cx, cy, R); g.addColorStop(0, '#fff0b8'); g.addColorStop(1, '#ff9248');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R, 0, TAU); ctx.fill();
+    hill(ctx, w, hz, hz - h * .05, h * .035, '#3d1b4f', 1, 1.4);
+    vgrad(ctx, w, h, [[0, '#ff9b5c'], [.35, '#a2386a'], [1, '#35195a']], hz, h);
+    for (let i = 0; i < 14; i++) {
+      const y = hz + (i + 1) * (h - hz) / 15, wd = R * (1.5 - i * .08) * (1 + .2 * Math.sin(sc.time * 2 + i));
+      ctx.fillStyle = `rgba(255,214,150,${Math.max(.05, .55 - i * .04)})`; ctx.fillRect(cx - wd / 2, y, wd, 2.5);
+    }
+  },
+  groups: [birdGroup(5, '#3a1a46', .1, .4), sparkGroup(8, '#ffd9a0', 4, 10)],
+  burstGroup: 1
+},
+/* 11 Bướm */
+{ init(sc) { sc.d = { fl: Array.from({ length: 9 }, (_, i) => ({ x: (i + .5) / 9 + rnd(-.03, .03), hh: rnd(.12, .3), r: rnd(.035, .05), ph: rnd(0, TAU), c: pick(['#ff8fb7', '#ffb3c8', '#b8a3ff', '#ffd166', '#ff9f80']) })) }; },
+  bg(ctx, sc, w, h) {
+    vgrad(ctx, w, h, [[0, '#fdeaf4'], [.55, '#efe6ff'], [1, '#e1f5e8']]);
+    glow(ctx, w * .5, h * .3, sc.u * .6, 'rgba(255,255,255,.7)');
+    hill(ctx, w, h, h * .9, h * .015, '#bfe5c4', 0, 1.4);
+    for (const f of sc.d.fl) {
+      const sway = Math.sin(sc.time * 1.1 + f.ph) * .06, bx = f.x * w, tx = bx + Math.sin(sway) * h * f.hh, ty = h - h * f.hh;
+      ctx.strokeStyle = '#6fb27a'; ctx.lineWidth = Math.max(2, sc.u * .01); ctx.beginPath(); ctx.moveTo(bx, h); ctx.quadraticCurveTo(bx, (h + ty) / 2, tx, ty); ctx.stroke();
+      ctx.save(); ctx.translate(tx, ty); ctx.rotate(sway); flower(ctx, sc.u * f.r * 1.4, 6, f.c, '#fff2b0', 1, .24, .3); ctx.restore();
+    }
+  },
+  groups: [{ n: 6, burstLife: [5, 8],
+    make: (sc, init) => ({ x: rnd(0, sc.w), y: rnd(.15, .6) * sc.h, ang: rnd(0, TAU), sp: rnd(30, 55), s: sc.u * rnd(.06, .085), pal: pick([['#ff8fb7', '#ffd1e0'], ['#8f9bff', '#cfd4ff'], ['#ffb347', '#ffe0a8'], ['#6fd3c0', '#c5f1e8']]), fr: rnd(9, 13), m: 100 }),
+    update(p, dt, sc) {
+      p.ang += Math.sin(p.t * 1.7 + p.ph) * dt * 2.4;
+      p.vx = Math.cos(p.ang) * p.sp; p.vy = Math.sin(p.ang) * p.sp;
+      if (p.y > sc.h * .7) p.vy -= 45; if (p.y < sc.h * .08) p.vy += 45;
+      if (p.x < 10) p.vx += 45; if (p.x > sc.w - 10) p.vx -= 45;
+      p.rot = Math.atan2(p.vy, p.vx) + Math.PI / 2;
+    },
+    draw: (ctx, p) => butterfly(ctx, p.s, p.pal[0], p.pal[1], p.t * p.fr) }]
+},
+/* 12 Ánh sáng */
+{ bg(ctx, sc, w, h) {
+    vgrad(ctx, w, h, [[0, '#170d33'], [.6, '#43225e'], [1, '#a24d6c']]);
+    for (let i = 0; i < 5; i++) {
+      const x0 = w * (.12 + .19 * i), off = Math.sin(sc.time * .4 + i * 1.3) * sc.u * .08;
+      const g = ctx.createLinearGradient(0, 0, 0, h); g.addColorStop(0, 'rgba(255,225,160,.2)'); g.addColorStop(1, 'rgba(255,225,160,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(x0 - sc.u * .03, 0); ctx.lineTo(x0 + sc.u * .03, 0); ctx.lineTo(x0 + off + sc.u * .16, h); ctx.lineTo(x0 + off - sc.u * .12, h); ctx.fill();
+    }
+    hill(ctx, w, h, h * .93, h * .015, '#241239', 0, 1.3);
+  },
+  groups: [{ n: 11, make: (sc, init) => ({ x: rnd(0, sc.w), y: init ? rnd(0, sc.h) : sc.h + 24, vx: 0, vy: -rnd(14, 34), s: rnd(.025, .045) * sc.u + 4, sw: 10, sf: rnd(.6, 1.4), m: 60 }),
+    draw: (ctx, p) => {
+      glow(ctx, 0, 0, p.s * 3.4, `rgba(255,190,90,${.5 + .15 * Math.sin(p.t * 3 + p.ph)})`);
+      ctx.fillStyle = '#ffb347'; ctx.beginPath();
+      if (ctx.roundRect) ctx.roundRect(-p.s * .6, -p.s * .8, p.s * 1.2, p.s * 1.6, p.s * .3); else ctx.rect(-p.s * .6, -p.s * .8, p.s * 1.2, p.s * 1.6);
+      ctx.fill();
+      glow(ctx, 0, 0, p.s * .7, 'rgba(255,248,210,.95)');
+    } },
+    { n: 18, stay: true, make: sc => ({ x: rnd(0, sc.w), y: rnd(0, sc.h), s: rnd(2, 4.5), ph: rnd(0, TAU), sf: rnd(1, 2.5), m: 400 }),
+      draw: (ctx, p) => { ctx.globalAlpha *= .2 + .8 * Math.abs(Math.sin(p.t * p.sf + p.ph)); sparkle(ctx, p.s, '#fff3c4'); } }]
+},
+/* 13 Yêu thương */
+{ init(sc) {
+    const X = [.1, .24, .4, .54, .68, .82, .93], HH = [.3, .4, .26, .45, .33, .4, .28], R = [.07, .09, .075, .1, .08, .085, .07];
+    const C = ['#ff6b9d', '#ff9fbd', '#ffb347', '#ffd166', '#ff8fa3', '#e86a92', '#ffb3c8'];
+    sc.d = { fl: X.map((x, i) => ({ x, hh: HH[i], r: R[i], d: i * .35, c: C[i] })) };
+  },
+  bg(ctx, sc, w, h) {
+    vgrad(ctx, w, h, [[0, '#ffd3e2'], [.6, '#ffeef2'], [1, '#fff7ef']]);
+    glow(ctx, w * .5, h * .35, sc.u * .6, 'rgba(255,255,255,.8)');
+    hill(ctx, w, h, h * .93, h * .012, '#c9e8c2', 0, 1.3);
+    for (const f of sc.d.fl) {
+      const g = easeOut(clamp01((sc.age - f.d) / 1.4)), open = easeBack(clamp01((sc.age - f.d - .9) / 1.1));
+      const bx = f.x * w, ty = h - h * f.hh * g, sway = Math.sin(sc.time + f.x * 6) * .04;
+      ctx.strokeStyle = '#5fa56d'; ctx.lineWidth = Math.max(2.5, sc.u * .012); ctx.lineCap = 'round';
+      ctx.beginPath(); ctx.moveTo(bx, h); ctx.quadraticCurveTo(bx, (h + ty) / 2, bx + sway * h * f.hh, ty); ctx.stroke();
+      if (g > .4) { ctx.save(); ctx.translate(bx, h - (h - ty) * .5); ctx.rotate(1); ctx.translate(0, -sc.u * .03); leaf(ctx, sc.u * .045 * g, '#7fbf88'); ctx.restore(); }
+      ctx.save(); ctx.translate(bx + sway * h * f.hh, ty); ctx.rotate(sway);
+      flower(ctx, sc.u * f.r * 1.5, 7, f.c, '#fff2b0', open, .24, .3); ctx.restore();
+    }
+  },
+  groups: [{ n: 18, make: (sc, init) => ({ x: rnd(0, sc.w), y: init ? rnd(0, sc.h) : sc.h + 20, vx: 0, vy: -rnd(26, 60), s: rnd(7, 16), sw: 14, sf: rnd(.8, 1.8), c: pick(PINKS) }),
+    draw: (ctx, p) => heart(ctx, p.s, p.c) }]
+}
+];
+
+/* ---------- Scene engine ---------- */
+class Scene {
+  constructor(n, w, h, dpr) {
+    this.n = n; this.cfg = SCENES[n - 1]; this.w = w; this.h = h; this.u = Math.min(w, h);
+    this.canvas = document.createElement('canvas');
+    this.canvas.width = Math.max(2, Math.round(w * dpr)); this.canvas.height = Math.max(2, Math.round(h * dpr));
+    this.ctx = this.canvas.getContext('2d'); this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    this.time = 0; this.age = 0; this.dt = 0; this.active = false; this.parts = []; this.d = {};
+    if (this.cfg.init) this.cfg.init(this);
+    this.cfg.groups.forEach((g, gi) => { for (let k = 0; k < g.n; k++) this.parts.push(this.spawn(g, gi, true)); });
+  }
+  spawn(g, gi, init) {
+    return Object.assign({ x: 0, y: 0, vx: 0, vy: 0, rot: 0, vr: 0, s: 8, t: rnd(0, 10), sw: 0, sf: 1, ph: rnd(0, TAU), g: gi }, g.make(this, init));
+  }
+  burst(x, y) {
+    const gi = this.cfg.burstGroup || 0, g = this.cfg.groups[gi], L = g.burstLife || [1.6, 2.6];
+    for (let k = 0; k < 14; k++) {
+      const p = this.spawn(g, gi, false), a = rnd(0, TAU), sp = rnd(40, 140);
+      p.x = x; p.y = y; p.vx = Math.cos(a) * sp; p.vy = Math.sin(a) * sp - 30; p.sw = 0;
+      if (p.ang !== undefined) p.ang = a;
+      p.life = rnd(L[0], L[1]); p.temp = true; this.parts.push(p);
+    }
+  }
+  tick(dt) {
+    const { ctx, w, h, cfg } = this;
+    this.dt = dt; this.time += dt; if (this.active) this.age += dt;
+    cfg.bg(ctx, this, w, h);
+    for (let i = this.parts.length - 1; i >= 0; i--) {
+      const p = this.parts[i], g = cfg.groups[p.g];
+      p.t += dt; if (g.update) g.update(p, dt, this);
+      p.x += (p.vx + (p.sw ? Math.cos(p.t * p.sf + p.ph) * p.sw : 0)) * dt; p.y += p.vy * dt; p.rot += p.vr * dt;
+      if (p.life !== undefined) { p.life -= dt; if (p.life <= 0) { this.parts.splice(i, 1); continue; } }
+      const m = p.m !== undefined ? p.m : 80;
+      if (p.x < -m || p.x > w + m || p.y < -m || p.y > h + m) {
+        if (g.stay) continue;
+        if (p.temp) { this.parts.splice(i, 1); continue; }
+        Object.assign(p, { t: 0 }, g.make(this, false));
+      }
+    }
+    for (const p of this.parts) {
+      ctx.save(); ctx.translate(p.x, p.y); if (p.rot) ctx.rotate(p.rot);
+      ctx.globalAlpha = p.life !== undefined ? Math.min(1, p.life * 1.2) : 1;
+      cfg.groups[p.g].draw(ctx, p, this); ctx.restore();
+    }
+    if (cfg.fg) cfg.fg(ctx, this, w, h);
+  }
+}
+
+/* ---------- Tim bay toàn sách (trang cuối) ---------- */
+const fx = {
+  cv: $('#fx'), ctx: null, p: [], acc: 0, w: 0, h: 0,
+  resize() {
+    const r = $('#stage').getBoundingClientRect(), dpr = Math.min(window.devicePixelRatio || 1, 2);
+    this.w = r.width; this.h = r.height;
+    this.cv.width = Math.max(2, Math.round(r.width * dpr)); this.cv.height = Math.max(2, Math.round(r.height * dpr));
+    this.ctx = this.cv.getContext('2d'); this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  },
+  add(x, y, vx, vy, burst) {
+    this.p.push({ x, y, vx, vy, s: rnd(9, 20), t: rnd(0, 6), sf: rnd(1, 2), sw: burst ? 0 : rnd(10, 24), ph: rnd(0, TAU), c: pick(PINKS), life: burst ? rnd(1.4, 2.4) : undefined, burst, rot: rnd(-.4, .4) });
+  },
+  burst(x, y) { for (let i = 0; i < 14; i++) { const a = rnd(0, TAU), sp = rnd(60, 190); this.add(x, y, Math.cos(a) * sp, Math.sin(a) * sp - 60, true); } },
+  tick(dt) {
+    if (!this.ctx) return;
+    const ctx = this.ctx; ctx.clearRect(0, 0, this.w, this.h);
+    if (f === N) {
+      this.acc += dt;
+      const sr = $('#stage').getBoundingClientRect(), br = book.getBoundingClientRect();
+      while (this.acc > .13) {
+        this.acc -= .13;
+        this.add(br.left - sr.left + rnd(0, br.width), br.bottom - sr.top - rnd(0, br.height * .3), rnd(-12, 12), -rnd(80, 150), false);
+      }
+    } else this.acc = 0;
+    for (let i = this.p.length - 1; i >= 0; i--) {
+      const p = this.p[i]; p.t += dt;
+      if (p.burst) { const k = Math.pow(.35, dt); p.vx *= k; p.vy = p.vy * k - 20 * dt; }
+      p.x += (p.vx + Math.cos(p.t * p.sf + p.ph) * p.sw) * dt; p.y += p.vy * dt;
+      if (p.life !== undefined) { p.life -= dt; if (p.life <= 0) { this.p.splice(i, 1); continue; } }
+      if (p.y < -30) { this.p.splice(i, 1); continue; }
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot + Math.sin(p.t * p.sf) * .25);
+      ctx.globalAlpha = .88 * clamp01(p.y / (this.h * .3)) * (p.life !== undefined ? Math.min(1, p.life) : 1);
+      heart(ctx, p.s, p.c); ctx.restore();
+    }
+  }
+};
+
+/* ---------- Điều khiển sách ---------- */
+const intro = $('#intro'), env = $('#env'), app = $('#app'), stage = $('#stage'), book = $('#book');
+const prevBtn = $('#prev'), nextBtn = $('#next'), dotsEl = $('#dots'), labelEl = $('#label');
+let f = 0, mode = 'spread', leaves = [], scenes = [], texts = [], goTimer = null, lastSize = '';
+
+dotsEl.innerHTML = Array.from({ length: N }, (_, i) => `<button class="dot" type="button" aria-label="Lời chúc ${i + 1}: ${WISHES[i][0]}" data-n="${i + 1}"></button>`).join('');
+const dotEls = [...dotsEl.children];
+
+function coverHTML() {
+  let petals = '';
+  for (let i = 0; i < 8; i++) petals += `<ellipse cx="0" cy="-52" rx="22" ry="46" transform="rotate(${i * 45})"/>`;
+  return `<svg class="cv-flower" viewBox="-100 -100 200 200" aria-hidden="true"><g fill="none" stroke="#f6d38a" stroke-width="1.2">${petals}<circle r="14"/><circle r="96"/></g></svg>
+  <div class="cv-in"><p class="cv-small">13 lời chúc · 20/10</p><h1 class="cv-title">Bốn mùa<br>yêu thương</h1><p class="cv-sub">Dành tặng những người phụ nữ tuyệt vời</p><p class="cv-hint">Chạm vào bìa để mở sách</p></div>`;
+}
+
+function makeScene(n, w, h, dpr) {
+  const sc = new Scene(n, w, h, dpr); scenes[n] = sc; sc.canvas._sc = sc; return sc;
+}
+
+function buildText(face, n, single, sceneH, pw, dpr) {
+  const [t, sub, body] = WISHES[n - 1], fin = n === N;
+  face.classList.add('textpage'); if (fin) face.classList.add('final');
+  if (single) {
+    face.style.setProperty('--sh', sceneH + 'px');
+    const wrap = el('div', 'sp-scene'); wrap.append(makeScene(n, pw - 20, sceneH - 10, dpr).canvas); face.append(wrap);
+  } else face.insertAdjacentHTML('beforeend', '<i class="frame"></i>');
+  const inner = el('div', 'tp-in');
+  const pd = (1.55 + body.split(' ').length * .038 + .5).toFixed(2) + 's';
+  inner.innerHTML = `<h2 class="tp-title"><span>${t}</span></h2><p class="tp-sub">${sub}</p><i class="tp-rule"></i>
+    <p class="tp-body">${wordsHTML(body, 'w')}</p>
+    ${fin ? `<p class="tp-promise" style="--pd:${pd}">${wordsHTML(PROMISE, 'pw')}</p>` : ''}
+    <div class="tp-foot"><span class="folio">${n} / ${N}</span>${fin ? '<button class="restart" type="button">Đọc lại từ đầu</button>' : '<span class="tp-hint">Chạm để lật trang</span>'}</div>`;
+  face.append(inner); texts[n] = face;
+}
+
+function fit() {
+  texts.forEach(face => {
+    if (!face) return;
+    const inner = face.querySelector('.tp-in'); let k = 1, guard = 0;
+    face.style.setProperty('--k', 1);
+    while (inner.scrollHeight > inner.clientHeight + 1 && k > .6 && guard++ < 16) { k -= .04; face.style.setProperty('--k', k.toFixed(2)); }
+  });
+}
+
+function build() {
+  clearTimeout(goTimer);
+  const st = stage.getBoundingClientRect();
+  const availW = st.width - 24, availH = st.height - 18;
+  let pw, ph;
+  if (availW >= 720 && availH >= 380) { mode = 'spread'; ph = Math.min(availH, availW / (2 * .74), 700); pw = ph * .74; }
+  else { mode = 'single'; ph = Math.min(availH, 640); pw = Math.min(availW, ph * .82, 480); }
+  pw = Math.floor(pw); ph = Math.floor(ph);
+  const s = Math.max(.74, Math.min(1.3, pw / 400)), dpr = Math.min(window.devicePixelRatio || 1, 2);
+  book.className = 'book ' + mode + (f === 0 ? ' closed' : '') + ' notrans';
+  book.style.setProperty('--pw', pw + 'px'); book.style.setProperty('--ph', ph + 'px'); book.style.setProperty('--s', s.toFixed(3));
+  book.style.width = (mode === 'spread' ? pw * 2 : pw) + 'px'; book.style.height = ph + 'px';
+  book.innerHTML = '<i class="board l"></i><i class="board r"></i>';
+  scenes = []; leaves = []; texts = [];
+  const sceneH = Math.round(ph * (ph < 520 ? .34 : .42));
+  for (let i = 0; i <= N; i++) {
+    const leafEl = el('div', 'leaf'), front = el('div', 'face front'), back = el('div', 'face back');
+    leafEl.append(front, back);
+    if (i === 0) { front.classList.add('cover'); front.innerHTML = coverHTML(); }
+    else buildText(front, i, mode === 'single', sceneH, pw, dpr);
+    if (mode === 'spread' && i < N) { back.classList.add('scenepage'); back.append(makeScene(i + 1, pw, ph, dpr).canvas); }
+    else back.classList.add('blank');
+    book.append(leafEl); leaves.push(leafEl);
+  }
+  leaves.forEach((l, i) => { l.classList.toggle('flipped', i < f); l.style.zIndex = i < f ? i + 1 : N + 1 - i; });
+  fit(); fx.resize(); setActive();
+  void book.offsetWidth; book.classList.remove('notrans');
+}
+
+function setActive() {
+  texts.forEach((t, n) => t && t.classList.toggle('on', n === f));
+  scenes.forEach((sc, n) => { if (!sc) return; const was = sc.active; sc.active = n === f; if (sc.active && !was) sc.age = 0; });
+  book.classList.toggle('closed', f === 0);
+  prevBtn.disabled = f === 0; nextBtn.disabled = f === N;
+  dotEls.forEach((d, i) => { d.classList.toggle('cur', i + 1 === f); d.classList.toggle('vis', i + 1 < f); });
+  labelEl.textContent = f === 0 ? 'Chạm vào bìa để mở sách' : f < 3 ? `${f} / ${N} · Chạm vào tranh để thả hiệu ứng` : `${f} / ${N}`;
+}
+
+function flipLeaf(i, on) {
+  const l = leaves[i]; if (!l) return;
+  l.classList.add('turning'); l.style.zIndex = 60; l.classList.toggle('flipped', on);
+  clearTimeout(l._t);
+  l._t = setTimeout(() => { l.classList.remove('turning'); l.style.zIndex = on ? i + 1 : N + 1 - i; }, 1150);
+}
+function go(dir) {
+  if (dir > 0 && f < N) { flipLeaf(f, true); f++; setActive(); }
+  else if (dir < 0 && f > 0) { f--; flipLeaf(f, false); setActive(); }
+}
+function goTo(n) {
+  clearTimeout(goTimer);
+  const step = () => { if (f === n) return; const up = n > f; go(up ? 1 : -1); goTimer = setTimeout(step, up ? 170 : 90); };
+  step();
+}
+
+/* ---------- Sự kiện ---------- */
+let swiped = false, sx = 0, sy = 0;
+stage.addEventListener('pointerdown', e => { sx = e.clientX; sy = e.clientY; });
+stage.addEventListener('pointerup', e => {
+  const dx = e.clientX - sx, dy = e.clientY - sy;
+  if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.5) { go(dx < 0 ? 1 : -1); swiped = true; setTimeout(() => { swiped = false; }, 80); }
+});
+stage.addEventListener('click', e => {
+  if (swiped) return;
+  const sr = stage.getBoundingClientRect();
+  const cv = e.target.closest('canvas');
+  if (cv && cv._sc) {
+    const sc = cv._sc, r = cv.getBoundingClientRect();
+    sc.burst((e.clientX - r.left) * (sc.w / r.width), (e.clientY - r.top) * (sc.h / r.height));
+    if (f === N) fx.burst(e.clientX - sr.left, e.clientY - sr.top);
+    return;
+  }
+  if (e.target.closest('.restart')) { goTo(0); return; }
+  const face = e.target.closest('.face');
+  if (face && (face.classList.contains('cover') || face.classList.contains('textpage'))) {
+    if (f === N) fx.burst(e.clientX - sr.left, e.clientY - sr.top); else go(1);
+  }
+});
+prevBtn.addEventListener('click', () => go(-1));
+nextBtn.addEventListener('click', () => go(1));
+dotsEl.addEventListener('click', e => { const d = e.target.closest('.dot'); if (d) goTo(+d.dataset.n); });
+document.addEventListener('keydown', e => {
+  if (!app.classList.contains('show')) return;
+  if (e.key === 'ArrowRight' || e.key === 'PageDown') go(1);
+  else if (e.key === 'ArrowLeft' || e.key === 'PageUp') go(-1);
+});
+
+/* ---------- Phong bì ---------- */
+$('#lt1').innerHTML = wordsHTML('Gửi những người phụ nữ tuyệt vời…', 'lw');
+let opened = false;
+function openEnv() {
+  if (opened) return; opened = true;
+  env.classList.add('open'); $('#hint').classList.add('gone'); env.setAttribute('aria-label', 'Phong bì đã mở');
+  setTimeout(() => $('#cta').classList.add('show'), reduce ? 200 : 3700);
+}
+env.addEventListener('click', openEnv);
+env.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openEnv(); } });
+$('#cta').addEventListener('click', () => {
+  intro.classList.add('leave'); app.classList.add('show');
+  setTimeout(() => { intro.style.display = 'none'; }, 1000);
+});
+
+/* ---------- Vòng lặp & resize ---------- */
+let last = performance.now();
+function frame(now) {
+  const dt = Math.min(.05, (now - last) / 1000) * speed; last = now;
+  if (app.classList.contains('show')) {
+    for (let n = Math.max(1, f - 1); n <= Math.min(N, f + 1); n++) { const sc = scenes[n]; if (sc) sc.tick(dt); }
+    fx.tick(dt);
+  }
+  requestAnimationFrame(frame);
+}
+let rt;
+function onResize() {
+  clearTimeout(rt);
+  rt = setTimeout(() => {
+    const r = stage.getBoundingClientRect(), key = Math.round(r.width / 4) + 'x' + Math.round(r.height / 4);
+    if (key !== lastSize) { lastSize = key; build(); }
+  }, 200);
+}
+window.addEventListener('resize', onResize);
+build();
+lastSize = Math.round(stage.getBoundingClientRect().width / 4) + 'x' + Math.round(stage.getBoundingClientRect().height / 4);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { fit(); });
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
