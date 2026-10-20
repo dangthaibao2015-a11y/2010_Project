@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>13 lời chúc 20/10 — Bốn mùa yêu thương</title>
+<title>15 lời chúc 20/10 — Bốn mùa yêu thương</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
@@ -431,7 +431,7 @@ button:focus-visible, .env:focus-visible, .dot:focus-visible {
     <div class="env-back"></div>
     <div class="letter">
       <p class="lt1" id="lt1"></p>
-      <p class="lt2">13 lời chúc đang chờ bạn bên trong.</p>
+      <p class="lt2">15 lời chúc đang chờ bạn bên trong.</p>
     </div>
     <div class="pocket"><i></i></div>
     <div class="flap"><i></i></div>
@@ -446,7 +446,7 @@ button:focus-visible, .env:focus-visible, .dot:focus-visible {
   </div>
 </section>
 
-<!-- Cuốn sách 13 trang -->
+<!-- Cuốn sách 15 trang -->
 <main class="app" id="app">
   <div class="stage" id="stage">
     <div class="book spread closed" id="book"></div>
@@ -473,7 +473,7 @@ const easeOut = t => 1 - Math.pow(1 - t, 3);
 const easeBack = t => { const c = 1.70158; return 1 + (c + 1) * Math.pow(t - 1, 3) + c * Math.pow(t - 1, 2); };
 const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 const speed = reduce ? 0.35 : 1;
-const N = 13;
+const N = 15;
 const $ = s => document.querySelector(s);
 const el = (t, c) => { const e = document.createElement(t); if (c) e.className = c; return e; };
 
@@ -491,6 +491,8 @@ const WISHES = [
 ['Hoàng hôn', 'Mong nàng biết yêu chính mình', 'Chúc bạn hiểu rằng không phải lúc nào rực rỡ nhất mới là đẹp, bởi ngay cả hoàng hôn cũng có vẻ đẹp khiến người ta lưu luyến. Mong bạn luôn biết trân trọng bản thân, kể cả trong những ngày bình thường, mệt mỏi và chưa hoàn hảo.'],
 ['Bướm', 'Mong nàng tự tin thay đổi', 'Chúc bạn luôn đủ dũng cảm để bước ra khỏi những giới hạn cũ và hóa thành phiên bản mà mình hằng mong muốn. Mong bạn nhớ rằng những tháng ngày khó khăn không làm bạn kém đi, mà có thể chính là đôi cánh đưa bạn đến những chân trời mới.'],
 ['Ánh sáng', 'Mong nàng gặp nhiều may mắn', 'Chúc con đường bạn đi luôn có những ánh đèn dẫn lối, những người tốt đồng hành và những cơ hội đến đúng lúc. Mong những điều tử tế bạn trao đi sẽ quay trở lại, biến cuộc sống của bạn thành một hành trình thật đáng yêu.'],
+['Cầu vồng', 'Mong nàng luôn có niềm vui', 'Chúc bạn sau mỗi cơn mưa đều gặp được một chân trời rực rỡ sắc màu, sau mỗi lần vấp ngã đều có thêm một lý do để mỉm cười. Mong cuộc sống luôn dịu dàng với bạn, và những điều bạn kiên nhẫn chờ đợi sẽ đến thật đẹp, thật đúng lúc.'],
+['Vì sao', 'Mong nàng luôn giữ ước mơ', 'Chúc bạn luôn giữ trong tim những ước mơ lấp lánh như sao trời, dù đêm có dài đến đâu vẫn tin rằng bình minh sẽ đến. Mong bạn đủ kiên trì để đi tiếp, đủ dịu dàng với chính mình và đủ may mắn để từng điều ước đều có ngày thành hiện thực.'],
 ['Yêu thương', 'Mong nàng hạnh phúc trọn vẹn', 'Nhân ngày 20/10, chúc tất cả những người phụ nữ luôn được yêu thương, được tôn trọng và được sống đúng với điều trái tim mình mong muốn. Mong bạn có đủ sức khỏe để đi xa, đủ bản lĩnh để theo đuổi ước mơ và đủ bình yên để nhận ra rằng bản thân luôn xứng đáng với hạnh phúc.']
 ];
 const PROMISE = 'Bạn xứng đáng được yêu thương mỗi ngày, không chỉ riêng 20/10';
@@ -828,7 +830,70 @@ const SCENES = [
     { n: 18, stay: true, make: sc => ({ x: rnd(0, sc.w), y: rnd(0, sc.h), s: rnd(2, 4.5), ph: rnd(0, TAU), sf: rnd(1, 2.5), m: 400 }),
       draw: (ctx, p) => { ctx.globalAlpha *= .2 + .8 * Math.abs(Math.sin(p.t * p.sf + p.ph)); sparkle(ctx, p.s, '#fff3c4'); } }]
 },
-/* 13 Yêu thương */
+/* 13 Cầu vồng */
+{ bg(ctx, sc, w, h) {
+    vgrad(ctx, w, h, [[0, '#a9d6f5'], [.55, '#e3f1fb'], [1, '#fff3ee']]);
+    glow(ctx, w * .84, h * .1, sc.u * .42, 'rgba(255,250,225,.9)');
+    const cx = w * .5, cy = h * .84, R = Math.min(w * .47, h * .66), bw = R * .075;
+    const cols = ['#ff6b6b', '#ffa94d', '#ffe066', '#8ce99a', '#74c0fc', '#9775fa', '#e599f7'];
+    const k = easeOut(clamp01((sc.age - .2) / 3));
+    ctx.lineCap = 'butt'; ctx.lineWidth = bw + .6;
+    cols.forEach((c, i) => {
+      ctx.globalAlpha = .82; ctx.strokeStyle = c; ctx.beginPath();
+      ctx.arc(cx, cy, R - i * bw, Math.PI, Math.PI + Math.PI * k); ctx.stroke();
+    });
+    ctx.globalAlpha = 1;
+    hill(ctx, w, h, h * .9, h * .018, '#bfe8b4', 0, 1.2); hill(ctx, w, h, h * .95, h * .014, '#a4dc9c', 2, 1.6);
+  },
+  groups: [sparkGroup(16, '#ffffff', 6, 16),
+    { n: 24, make: (sc, init) => ({ x: rnd(0, sc.w), y: init ? rnd(-20, sc.h) : rnd(-30, -10), vx: -18, vy: rnd(150, 230), s: rnd(7, 13), m: 40 }),
+      draw: (ctx, p, sc) => { ctx.globalAlpha *= Math.max(.12, .6 - sc.age / 7); ctx.strokeStyle = '#8fb8e8'; ctx.lineWidth = 1.4; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-p.s * .12, p.s); ctx.stroke(); } },
+    { n: 4, make: (sc, init) => { const s = rnd(sc.w * .13, sc.w * .22); return { x: init ? rnd(0, sc.w) : -s * 1.6, y: rnd(.05, .3) * sc.h, vx: 3 + s * .05, vy: 0, s, m: s * 2 }; },
+      draw: (ctx, p) => { ctx.save(); ctx.translate(0, 4); cloud(ctx, p.s, 'rgba(140,180,225,.3)'); ctx.restore(); cloud(ctx, p.s, 'rgba(255,255,255,.96)'); } }],
+  burstGroup: 0
+},
+/* 14 Vì sao */
+{ init(sc) {
+    const P = Array.from({ length: 10 }, (_, i) => { const t = i / 10 * TAU; return [Math.pow(Math.sin(t), 3) * 16, -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t))]; });
+    sc.d = { P, st: Array.from({ length: 46 }, () => ({ x: rnd(0, 1), y: rnd(0, .85), r: rnd(.6, 1.9), ph: rnd(0, TAU) })), next: 3, sh: null };
+  },
+  bg(ctx, sc, w, h) {
+    vgrad(ctx, w, h, [[0, '#0d1236'], [.6, '#2a2468'], [1, '#6b3f8e']]);
+    for (const s of sc.d.st) { ctx.fillStyle = `rgba(255,248,225,${.2 + .75 * Math.abs(Math.sin(sc.time * 1.2 + s.ph))})`; ctx.beginPath(); ctx.arc(s.x * w, s.y * h, s.r, 0, TAU); ctx.fill(); }
+    const cx = w * .5, cy = h * .44, sz = Math.min(w * .36, h * .33), k = sz / 16, P = sc.d.P;
+    const pts = P.map(([x, y]) => [cx + x * k, cy + y * k]);
+    ctx.strokeStyle = 'rgba(255,230,170,.7)'; ctx.lineWidth = Math.max(1.2, sc.u * .006); ctx.lineCap = 'round';
+    for (let i = 0; i < pts.length; i++) {
+      const a = pts[i], b = pts[(i + 1) % pts.length], t = easeOut(clamp01((sc.age - .4 - i * .22) / .5));
+      if (t <= 0) continue;
+      ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t); ctx.stroke();
+    }
+    pts.forEach(([x, y], i) => {
+      const t = clamp01((sc.age - .2 - i * .22) / .4); if (t <= 0) return;
+      const tw = .75 + .25 * Math.sin(sc.time * 2.2 + i * 1.3);
+      glow(ctx, x, y, sc.u * .09 * tw, 'rgba(255,225,150,.55)');
+      ctx.save(); ctx.translate(x, y); ctx.rotate(sc.time * .3 * (i % 2 ? 1 : -1)); sparkle(ctx, sc.u * .045 * t * tw + 2, '#fff6d6'); ctx.restore();
+    });
+    hill(ctx, w, h, h * .94, h * .015, '#26154a', 0, 1.3);
+  },
+  groups: [sparkGroup(10, '#ffe8a8', 4, 12)],
+  burstGroup: 0,
+  fg(ctx, sc, w, h) {
+    const d = sc.d;
+    if (!d.sh && sc.time > d.next) { d.sh = { x: rnd(.5, .95) * w, y: rnd(.04, .25) * h, t: 0 }; d.next = sc.time + rnd(4, 8); }
+    if (d.sh) {
+      d.sh.t += sc.dt; const k = d.sh.t / .9;
+      if (k >= 1) d.sh = null;
+      else {
+        const x = d.sh.x - k * w * .4, y = d.sh.y + k * h * .25;
+        const g = ctx.createLinearGradient(x, y, x + 70, y - 44);
+        g.addColorStop(0, `rgba(255,255,255,${1 - k})`); g.addColorStop(1, 'rgba(255,255,255,0)');
+        ctx.strokeStyle = g; ctx.lineWidth = 2; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + 70, y - 44); ctx.stroke();
+      }
+    }
+  }
+},
+/* 15 Yêu thương */
 { init(sc) {
     const X = [.1, .24, .4, .54, .68, .82, .93], HH = [.3, .4, .26, .45, .33, .4, .28], R = [.07, .09, .075, .1, .08, .085, .07];
     const C = ['#ff6b9d', '#ff9fbd', '#ffb347', '#ffd166', '#ff8fa3', '#e86a92', '#ffb3c8'];
@@ -950,7 +1015,7 @@ function coverHTML() {
   let petals = '';
   for (let i = 0; i < 8; i++) petals += `<ellipse cx="0" cy="-52" rx="22" ry="46" transform="rotate(${i * 45})"/>`;
   return `<svg class="cv-flower" viewBox="-100 -100 200 200" aria-hidden="true"><g fill="none" stroke="#f6d38a" stroke-width="1.2">${petals}<circle r="14"/><circle r="96"/></g></svg>
-  <div class="cv-in"><p class="cv-small">13 lời chúc · 20/10</p><h1 class="cv-title">Bốn mùa<br>yêu thương</h1><p class="cv-sub">Dành tặng những người phụ nữ tuyệt vời</p><p class="cv-hint">Chạm vào bìa để mở sách</p></div>`;
+  <div class="cv-in"><p class="cv-small">15 lời chúc · 20/10</p><h1 class="cv-title">Bốn mùa<br>yêu thương</h1><p class="cv-sub">Dành tặng những người phụ nữ tuyệt vời</p><p class="cv-hint">Chạm vào bìa để mở sách</p></div>`;
 }
 
 function makeScene(n, w, h, dpr) {
