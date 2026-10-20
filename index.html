@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>15 lời chúc 20/10 — Bốn mùa yêu thương</title>
+<title>9 lời chúc 20/10</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
@@ -82,7 +82,7 @@ button:focus-visible, .env:focus-visible, .dot:focus-visible {
 .intro {
   position: absolute; inset: 0; z-index: 20;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 34px;
+  gap: 22px;
   transition: opacity .9s ease, visibility .9s;
 }
 .intro.leave { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -159,7 +159,7 @@ button:focus-visible, .env:focus-visible, .dot:focus-visible {
 .env.open .seal { opacity: 0; transform: translate(-50%, -50%) scale(.6); }
 .env:not(.open) { animation: nudge 2.8s ease-in-out infinite; }
 @keyframes nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-.intro-foot { position: relative; height: 50px; width: 100%; display: grid; place-items: center; }
+.intro-foot { position: relative; min-height: 50px; width: 100%; display: grid; place-items: center; }
 .intro-foot > * { grid-area: 1 / 1; }
 .hint { margin: 0; color: var(--muted); font-size: 15px; transition: opacity .4s; }
 .hint.gone { display: none; }
@@ -421,24 +421,200 @@ button:focus-visible, .env:focus-visible, .dot:focus-visible {
     transform: rotate(0deg) scaleX(1.05);
 }
 
+
+/* ================= Nhập tên ở phong bì ================= */
+.nameform {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  width: min(86vw, 360px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.nameform.done {
+  opacity: 0; transform: translateY(-6px); pointer-events: none; visibility: hidden;
+  transition: opacity .5s ease, transform .5s ease, visibility 0s .5s;
+}
+.nameform label { color: var(--muted); font-size: 15px; font-weight: 500; text-align: center; }
+.nf-row { display: flex; gap: 8px; width: 100%; }
+.nf-row input {
+  flex: 1; min-width: 0; padding: 12px 16px; border-radius: 999px;
+  border: 1.5px solid var(--chip-line); background: var(--chip); color: var(--ink);
+  font: inherit; font-size: 16px; text-align: center; outline: none;
+}
+.nf-row input::placeholder { color: var(--muted); opacity: .7; }
+.nf-row input:focus { border-color: var(--rose); }
+.nbtn {
+  flex: none; border: 0; cursor: pointer; padding: 0 22px; border-radius: 999px;
+  background: #c81f59; color: #fff; font-weight: 500; font-size: 16px;
+  box-shadow: 0 8px 20px rgba(200, 31, 89, .3);
+}
+.shake { animation: shake .45s; }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+
+/* ================= Trang trò chơi ================= */
+.gamepage { cursor: default; }
+.gamepage .tp-title { font-size: calc(46px * var(--s) * var(--k, 1)); }
+.game-body {
+  flex: 1; min-height: 0; display: flex; flex-direction: column;
+  opacity: 0; transform: translateY(8px);
+}
+.game-body > :first-child { margin-top: auto; }
+.game-body > :last-child { margin-bottom: auto; }
+.textpage.on .game-body { opacity: 1; transform: none; transition: opacity .7s ease 1.2s, transform .7s ease 1.2s; }
+.g-q {
+  margin: 0 0 calc(8px * var(--s)); font-size: calc(16px * var(--s) * var(--k, 1));
+  font-weight: 500; line-height: 1.4; color: var(--pt);
+}
+.g-msg {
+  margin: calc(6px * var(--s)) 0 0; min-height: calc(34px * var(--s) * var(--k, 1));
+  font-size: calc(14px * var(--s) * var(--k, 1)); line-height: 1.4;
+  text-align: center; color: #8d3a5d; font-weight: 500;
+}
+.g-btn {
+  border: 0; cursor: pointer; border-radius: 999px; background: #c81f59; color: #fff; font-weight: 500;
+  padding: calc(9px * var(--s) * var(--k, 1)) calc(22px * var(--s));
+  font-size: calc(15px * var(--s) * var(--k, 1));
+  box-shadow: 0 6px 16px rgba(200, 31, 89, .28); touch-action: manipulation;
+}
+.game-body .g-btn { align-self: center; }
+
+/* Câu hỏi hoa */
+.opts { display: flex; flex-direction: column; gap: calc(6px * var(--s) * var(--k, 1)); }
+.opt {
+  display: flex; align-items: center; gap: 10px; text-align: left;
+  border: 1.5px solid rgba(200, 31, 89, .25); background: #fff; color: var(--pt);
+  border-radius: 12px; padding: calc(7px * var(--s) * var(--k, 1)) 14px;
+  font: inherit; font-size: calc(15.5px * var(--s) * var(--k, 1)); cursor: pointer; touch-action: manipulation;
+  transition: opacity .3s, transform .35s cubic-bezier(.3, 1.4, .5, 1), background .3s;
+}
+.opt .ltr {
+  flex: none; width: 1.6em; height: 1.6em; display: grid; place-items: center; border-radius: 50%;
+  background: #fde4ec; color: #c81f59; font-style: normal; font-weight: 600; font-size: .85em;
+}
+.opt .e { font-size: 1.15em; }
+.opt.wrong { opacity: .5; text-decoration: line-through; background: #fbe9ee; animation: shake .45s; }
+.opt.real {
+  opacity: 0; transform: scale(.9); pointer-events: none; font-weight: 600; color: #fff; border-color: transparent;
+  background: linear-gradient(135deg, #ff7aa8, #c81f59);
+}
+.opt.real.show { opacity: 1; transform: none; pointer-events: auto; }
+.opt.real.win { box-shadow: 0 0 0 4px rgba(255, 122, 168, .35); }
+.opt .ar { font-style: normal; animation: nudgeR .9s ease-in-out infinite; }
+@keyframes nudgeR { 50% { transform: translateX(7px); } }
+
+/* Máy đo */
+.m-track {
+  position: relative; height: calc(36px * var(--s) * var(--k, 1)); border-radius: 999px; overflow: hidden;
+  background: #f6e3ea; border: 1.5px solid rgba(200, 31, 89, .25);
+}
+.m-bar { position: absolute; inset: 0 auto 0 0; width: 0; border-radius: 999px; background: linear-gradient(90deg, #ff9fbd, #e63e6d); }
+.m-pct {
+  position: absolute; inset: 0; display: grid; place-items: center; color: #fff;
+  font-size: calc(15px * var(--s) * var(--k, 1)); text-shadow: 0 1px 3px rgba(120, 10, 50, .6); letter-spacing: .04em;
+}
+.m-track.over { animation: shake .5s 3; border-color: #ff3b6b; }
+.m-track.over .m-bar { background: repeating-linear-gradient(45deg, #ff3b6b 0 10px, #ff9fbd 10px 20px); }
+
+/* Nút "Không" chạy trốn */
+.nope-zone { position: relative; height: calc(165px * var(--s) * var(--k, 1)); }
+.nope-zone .g-btn { position: absolute; }
+.nope-zone .yes {
+  left: 4%; top: 50%; transform: translateY(-50%) scale(var(--ys, 1)); transform-origin: left center;
+  transition: transform .35s cubic-bezier(.3, 1.5, .5, 1);
+}
+.nope-zone .no {
+  left: 70%; top: 50%; transform: translate(-50%, -50%) scale(var(--ns, 1));
+  background: #fff; color: #c81f59; border: 1.5px solid rgba(200, 31, 89, .4); box-shadow: none;
+  transition: left .28s cubic-bezier(.3, 1.4, .5, 1), top .28s cubic-bezier(.3, 1.4, .5, 1), transform .3s, opacity .3s;
+}
+.nope-zone .no.gone { opacity: 0; pointer-events: none; transform: translate(-50%, -50%) scale(0); }
+
+/* Bốc quẻ */
+.f-stage { display: grid; place-items: center; height: calc(175px * var(--s) * var(--k, 1)); }
+.f-stage > * { grid-area: 1 / 1; }
+.gift {
+  width: calc(120px * var(--s) * var(--k, 1)); height: calc(120px * var(--s) * var(--k, 1));
+  padding: 0; border: 0; background: none; cursor: pointer; touch-action: manipulation;
+  transition: opacity .4s, transform .4s;
+}
+.gift svg { width: 100%; height: 100%; overflow: visible; }
+.gift .lid { transform-box: fill-box; transform-origin: center bottom; transition: transform .45s cubic-bezier(.3, 1.4, .5, 1); }
+.gift.shake { animation: wiggle .65s; }
+.gift.open .lid { transform: translate(12px, -34px) rotate(24deg); }
+.gift.away { opacity: 0; transform: scale(.6); pointer-events: none; }
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0); }
+  15% { transform: rotate(-9deg); } 35% { transform: rotate(9deg); }
+  55% { transform: rotate(-7deg); } 75% { transform: rotate(7deg); }
+}
+.f-card {
+  width: 100%; text-align: center; background: #fff; border: 1.5px solid rgba(200, 31, 89, .28); border-radius: 14px;
+  padding: calc(14px * var(--s) * var(--k, 1)) calc(16px * var(--s)); box-shadow: 0 8px 20px rgba(120, 20, 60, .12);
+  opacity: 0; transform: scale(.85) rotate(-2deg); pointer-events: none;
+}
+.f-card.show { opacity: 1; transform: none; animation: pop .5s cubic-bezier(.3, 1.5, .5, 1); }
+.f-card small { display: block; color: #a47488; font-size: calc(12.5px * var(--s) * var(--k, 1)); margin-bottom: 4px; }
+.f-card p {
+  margin: 0; color: #c81f59; font-weight: 600; line-height: 1.45;
+  font-size: calc(17px * var(--s) * var(--k, 1));
+}
+@keyframes pop { 0% { transform: scale(.6); opacity: 0; } 100% { transform: none; opacity: 1; } }
+
+/* Trang cảm ơn */
+.thanks .tp-title { font-size: calc(42px * var(--s) * var(--k, 1)); }
+.thanks .tp-body + .tp-body { margin-top: calc(10px * var(--s)); }
+.sign.author {
+  margin: calc(6px * var(--s)) 0 0; padding-bottom: 10px; align-self: flex-end;
+  font-size: calc(26px * var(--s) * var(--k, 1)); opacity: 0;
+}
+.textpage.on .sign { opacity: 1; transition: opacity .9s ease var(--sd, 3s); }
+
+/* Chấm trang cho trò chơi */
+.dot.g::before { border-radius: 2px; transform: rotate(45deg); }
+.dot.g.cur::before { transform: rotate(45deg) scale(1.5); }
+
+/* Thanh kéo tuổi */
+.age-box { display: flex; align-items: baseline; justify-content: center; gap: 8px; color: #c81f59; }
+.age-box b {
+  display: inline-block; min-width: 1.2em; text-align: center; font-weight: 700; line-height: 1;
+  font-family: "Dancing Script", "Brush Script MT", cursive; font-size: calc(72px * var(--s) * var(--k, 1));
+}
+.age-box b.pop { animation: pop .5s cubic-bezier(.3, 1.5, .5, 1); }
+.age-box span { font-size: calc(18px * var(--s) * var(--k, 1)); font-weight: 500; color: #8d3a5d; }
+.age-rng { -webkit-appearance: none; appearance: none; width: 100%; height: 30px; margin: calc(10px * var(--s)) 0 0; background: transparent; cursor: pointer; }
+.age-rng::-webkit-slider-runnable-track { height: 8px; border-radius: 99px; background: linear-gradient(90deg, #ffb3c8, #e63e6d); }
+.age-rng::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; margin-top: -9px; border-radius: 50%; background: #fff; border: 3px solid #c81f59; box-shadow: 0 2px 8px rgba(120, 20, 60, .3); }
+.age-rng::-moz-range-track { height: 8px; border-radius: 99px; background: linear-gradient(90deg, #ffb3c8, #e63e6d); }
+.age-rng::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 3px solid #c81f59; box-shadow: 0 2px 8px rgba(120, 20, 60, .3); }
 </style>
 </head>
 <body>
 
 <!-- Trang mở đầu: bức thư bí mật -->
 <section class="intro" id="intro">
-  <div class="env" id="env" role="button" tabindex="0" aria-label="Chạm để mở phong bì">
+  <div class="env locked" id="env" role="button" tabindex="0" aria-label="Nhập tên để mở phong bì">
     <div class="env-back"></div>
     <div class="letter">
       <p class="lt1" id="lt1"></p>
-      <p class="lt2">15 lời chúc đang chờ bạn bên trong.</p>
+      <p class="lt2" id="lt2"></p>
     </div>
     <div class="pocket"><i></i></div>
     <div class="flap"><i></i></div>
     <div class="seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.7 1.1 4.6 2.7h2C13.9 6.1 15.6 5 17.6 5 21 5 23.1 8.4 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg></div>
   </div>
   <div class="intro-foot">
-    <p class="hint" id="hint">Chạm vào phong bì để mở thư</p>
+    <div class="nameform" id="nameForm">
+      <label for="nameIn" id="nfLabel">Bạn tên gì nhỉ?</label>
+      <div class="nf-row" id="nfRow">
+        <input id="nameIn" type="text" maxlength="20" placeholder="Nhập tên của bạn…" autocomplete="off" enterkeyhint="done">
+        <button class="nbtn" id="nameBtn" type="button">Gửi</button>
+      </div>
+    </div>
+    <p class="hint gone" id="hint">Chạm vào phong bì để mở thư</p>
     <button class="cta" id="cta" type="button">Mở cuốn sách</button>
   </div>
     <div>
@@ -446,7 +622,7 @@ button:focus-visible, .env:focus-visible, .dot:focus-visible {
   </div>
 </section>
 
-<!-- Cuốn sách 15 trang -->
+<!-- Cuốn sách 9 lời chúc -->
 <main class="app" id="app">
   <div class="stage" id="stage">
     <div class="book spread closed" id="book"></div>
@@ -478,26 +654,57 @@ const $ = s => document.querySelector(s);
 const el = (t, c) => { const e = document.createElement(t); if (c) e.className = c; return e; };
 
 /* ---------- Nội dung ---------- */
-const WISHES = [
-['Xuân', 'Mong nàng luôn rực rỡ', 'Chúc những người phụ nữ luôn mang trong tim sắc xuân dịu dàng, dù tháng năm có đổi thay vẫn giữ được nét tươi trẻ và niềm tin vào cuộc sống. Mong mỗi ngày của bạn đều nở hoa, mỗi ước mơ đều có ngày đơm trái ngọt.'],
-['Hạ', 'Mong nàng luôn tỏa sáng', 'Chúc bạn có một mùa hè rực rỡ như nắng vàng, luôn tự tin theo đuổi những điều khiến trái tim mình hạnh phúc. Mong nhiệt huyết trong bạn chẳng bao giờ tắt và cuộc đời luôn trao cho bạn những ngày đầy nắng.'],
-['Thu', 'Mong nàng bình yên', 'Chúc bạn có một tâm hồn dịu dàng như mùa thu, biết yêu thương người khác nhưng cũng luôn dành cho bản thân những điều tốt đẹp. Mong mọi bộn bề sẽ nhẹ nhàng qua đi, để trong tim bạn chỉ còn lại bình yên và những niềm vui giản dị.'],
-['Đông', 'Mong nàng luôn được yêu thương', 'Chúc bạn giữa những ngày lạnh giá vẫn luôn có một vòng tay ấm áp, một người sẵn lòng lắng nghe và những điều nhỏ bé khiến mình mỉm cười. Mong trái tim bạn dù trải qua bao mùa đông vẫn luôn ấm áp và tràn đầy hy vọng.'],
-['Hoa', 'Mong nàng luôn được trân trọng', 'Chúc bạn như một đóa hoa mang vẻ đẹp riêng, chẳng cần so sánh với bất kỳ ai vẫn luôn rực rỡ theo cách của mình. Mong bạn được nâng niu không chỉ bởi vẻ ngoài, mà còn bởi trái tim đẹp và những điều tử tế bạn trao đi.'],
-['Trăng', 'Mong nàng luôn tỏa sáng', 'Chúc bạn luôn là ánh trăng dịu dàng giữa cuộc đời rộng lớn, không cần chói chang vẫn đủ sức làm đẹp cho thế giới quanh mình. Dẫu có những đêm tối, mong bạn vẫn tin rằng ánh sáng bên trong mình chưa bao giờ biến mất.'],
-['Biển', 'Mong nàng tự do', 'Chúc bạn có tâm hồn rộng mở như biển cả, đủ bao dung để yêu thương và đủ mạnh mẽ để vượt qua những con sóng lớn. Mong bạn luôn tự do lựa chọn con đường mình muốn đi và can đảm sống một cuộc đời thật sự thuộc về mình.'],
-['Mây', 'Mong nàng nhẹ lòng', 'Chúc bạn có những ngày nhẹ nhàng như mây trôi, không phải gồng mình mạnh mẽ trước mọi điều và cũng chẳng cần làm hài lòng tất cả mọi người. Mong những muộn phiền sớm tan đi, nhường chỗ cho sự an nhiên và nụ cười thật lòng.'],
-['Bình minh', 'Mong nàng luôn có khởi đầu mới', 'Chúc mỗi sớm mai đều mang đến cho bạn một lý do để hy vọng, một cơ hội để trưởng thành và một điều gì đó đáng mong chờ. Dù hôm qua có mệt mỏi đến đâu, mong ngày mai vẫn mở ra trước mắt bạn những chân trời tươi sáng.'],
-['Hoàng hôn', 'Mong nàng biết yêu chính mình', 'Chúc bạn hiểu rằng không phải lúc nào rực rỡ nhất mới là đẹp, bởi ngay cả hoàng hôn cũng có vẻ đẹp khiến người ta lưu luyến. Mong bạn luôn biết trân trọng bản thân, kể cả trong những ngày bình thường, mệt mỏi và chưa hoàn hảo.'],
-['Bướm', 'Mong nàng tự tin thay đổi', 'Chúc bạn luôn đủ dũng cảm để bước ra khỏi những giới hạn cũ và hóa thành phiên bản mà mình hằng mong muốn. Mong bạn nhớ rằng những tháng ngày khó khăn không làm bạn kém đi, mà có thể chính là đôi cánh đưa bạn đến những chân trời mới.'],
-['Ánh sáng', 'Mong nàng gặp nhiều may mắn', 'Chúc con đường bạn đi luôn có những ánh đèn dẫn lối, những người tốt đồng hành và những cơ hội đến đúng lúc. Mong những điều tử tế bạn trao đi sẽ quay trở lại, biến cuộc sống của bạn thành một hành trình thật đáng yêu.'],
-['Cầu vồng', 'Mong nàng luôn có niềm vui', 'Chúc bạn sau mỗi cơn mưa đều gặp được một chân trời rực rỡ sắc màu, sau mỗi lần vấp ngã đều có thêm một lý do để mỉm cười. Mong cuộc sống luôn dịu dàng với bạn, và những điều bạn kiên nhẫn chờ đợi sẽ đến thật đẹp, thật đúng lúc.'],
-['Vì sao', 'Mong nàng luôn giữ ước mơ', 'Chúc bạn luôn giữ trong tim những ước mơ lấp lánh như sao trời, dù đêm có dài đến đâu vẫn tin rằng bình minh sẽ đến. Mong bạn đủ kiên trì để đi tiếp, đủ dịu dàng với chính mình và đủ may mắn để từng điều ước đều có ngày thành hiện thực.'],
-['Yêu thương', 'Mong nàng hạnh phúc trọn vẹn', 'Nhân ngày 20/10, chúc tất cả những người phụ nữ luôn được yêu thương, được tôn trọng và được sống đúng với điều trái tim mình mong muốn. Mong bạn có đủ sức khỏe để đi xa, đủ bản lĩnh để theo đuổi ước mơ và đủ bình yên để nhận ra rằng bản thân luôn xứng đáng với hạnh phúc.']
-];
-const PROMISE = 'Bạn xứng đáng được yêu thương mỗi ngày, không chỉ riêng 20/10';
+/* ---------- Tên người nhận & trạng thái ---------- */
+let NAME = '';
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const fill = s => s.replace(/\{n\}/g, esc(NAME || 'bạn')).replace(/\{N\}/g, esc(NAME || 'Bạn'));
+const txt = s => s.replace(/\{n\}/g, NAME || 'bạn').replace(/\{N\}/g, NAME || 'Bạn');
+const cleanName = s => s.trim().replace(/\s+/g, ' ').slice(0, 20).split(' ')
+  .map(w => w ? w.charAt(0).toLocaleUpperCase('vi') + w.slice(1).toLocaleLowerCase('vi') : w).join(' ');
+const G = { meter: { state: 'idle', token: 0 }, flower: { wrong: [], done: false, msg: '' }, nope: { n: 0, yes: false, msg: '' }, fortune: { last: -1 }, age: { n: 0, msg: '' } };
 
-const wordsHTML = (str, cls) => str.split(' ').map((w, i) => `<span class="${cls}" style="--i:${i}">${w}</span>`).join(' ');
+/* ---------- Nội dung ---------- */
+const WISHES = [
+['Xuân', 'Mong nàng luôn rực rỡ', 'Chúc {n} luôn mang trong tim sắc xuân dịu dàng, dù tháng năm có đổi thay vẫn giữ được nét tươi trẻ và niềm tin vào cuộc sống. Mong mỗi ngày của bạn đều nở hoa, mỗi ước mơ đều có ngày đơm trái ngọt.'],
+['Hoa', 'Mong nàng luôn được trân trọng', 'Chúc {n} như một đóa hoa mang vẻ đẹp riêng, chẳng cần so sánh với bất kỳ ai vẫn luôn rực rỡ theo cách của mình. Mong bạn được nâng niu không chỉ bởi vẻ ngoài, mà còn bởi trái tim đẹp và những điều tử tế bạn trao đi.'],
+['Trăng', 'Mong nàng luôn tỏa sáng', 'Chúc {n} luôn là ánh trăng dịu dàng giữa cuộc đời rộng lớn, không cần chói chang vẫn đủ sức làm đẹp cho thế giới quanh mình. Dẫu có những đêm tối, mong bạn vẫn tin rằng ánh sáng bên trong mình chưa bao giờ biến mất.'],
+['Biển', 'Mong nàng tự do', 'Chúc {n} có tâm hồn rộng mở như biển cả, đủ bao dung để yêu thương và đủ mạnh mẽ để vượt qua những con sóng lớn. Mong bạn luôn tự do lựa chọn con đường mình muốn đi và can đảm sống một cuộc đời thật sự thuộc về mình.'],
+['Bình minh', 'Mong nàng luôn có khởi đầu mới', 'Chúc mỗi sớm mai đều mang đến cho {n} một lý do để hy vọng, một cơ hội để trưởng thành và một điều gì đó đáng mong chờ. Dù hôm qua có mệt mỏi đến đâu, mong ngày mai vẫn mở ra trước mắt bạn những chân trời tươi sáng.'],
+['Bướm', 'Mong nàng tự tin thay đổi', 'Chúc {n} luôn đủ dũng cảm để bước ra khỏi những giới hạn cũ và hóa thành phiên bản mà mình hằng mong muốn. Mong bạn nhớ rằng những tháng ngày khó khăn không làm bạn kém đi, mà có thể chính là đôi cánh đưa bạn đến những chân trời mới.'],
+['Hoàng hôn', 'Mong nàng biết yêu chính mình', 'Chúc {n} hiểu rằng không phải lúc nào rực rỡ nhất mới là đẹp, bởi ngay cả hoàng hôn cũng có vẻ đẹp khiến người ta lưu luyến. Mong bạn luôn biết trân trọng bản thân, kể cả trong những ngày bình thường, mệt mỏi và chưa hoàn hảo.'],
+['Vì sao', 'Mong nàng luôn giữ ước mơ', 'Chúc {n} luôn giữ trong tim những ước mơ lấp lánh như sao trời, dù đêm có dài đến đâu vẫn tin rằng bình minh sẽ đến. Mong bạn đủ kiên trì để đi tiếp, đủ dịu dàng với chính mình và đủ may mắn để từng điều ước đều có ngày thành hiện thực.'],
+['Yêu thương', 'Mong nàng hạnh phúc trọn vẹn', 'Nhân ngày 20/10, chúc {n} và tất cả những người phụ nữ luôn được yêu thương, được tôn trọng và được sống đúng với điều trái tim mình mong muốn. Mong bạn có đủ sức khỏe để đi xa, đủ bản lĩnh để theo đuổi ước mơ và đủ bình yên để nhận ra rằng bản thân luôn xứng đáng với hạnh phúc.']
+];
+const PROMISE = '{N} xứng đáng được yêu thương mỗi ngày, không chỉ riêng 20/10';
+
+/* Thứ tự các trang: w = lời chúc, g = trò chơi, sc = số cảnh hoạt hình ở trang tranh */
+const PAGES = [
+  { t: 'wish', w: 0, sc: 1 },
+  { t: 'wish', w: 1, sc: 5 },
+  { t: 'game', g: 'flower', sc: 2 },
+  { t: 'wish', w: 2, sc: 6 },
+  { t: 'wish', w: 3, sc: 7 },
+  { t: 'game', g: 'age', sc: 1 },
+  { t: 'wish', w: 4, sc: 9 },
+  { t: 'wish', w: 5, sc: 11 },
+  { t: 'game', g: 'meter', sc: 13 },
+  { t: 'wish', w: 6, sc: 10 },
+  { t: 'wish', w: 7, sc: 14 },
+  { t: 'game', g: 'nope', sc: 8 },
+  { t: 'game', g: 'fortune', sc: 12 },
+  { t: 'wish', w: 8, sc: 15 },
+  { t: 'thanks', sc: 3 }
+];
+const GAME_META = {
+  flower: ['Câu hỏi nhỏ', 'Chọn thật kỹ nha 🤔', 'Câu hỏi hoa'],
+  meter: ['Máy đo nhan sắc', 'Thiết bị siêu chính xác 🔬', 'Máy đo nhan sắc'],
+  nope: ['Hỏi thật nè', 'Trả lời thật lòng nha 😌', 'Hỏi thật nè'],
+  age: ['Bạn mấy tuổi?', 'Khai thật nha 🎂', 'Nhập tuổi'],
+  fortune: ['Bốc quẻ', 'Hộp quà may mắn hôm nay 🎁', 'Bốc quẻ']
+};
+const pageLabel = P => P.t === 'wish' ? WISHES[P.w][0] : P.t === 'game' ? GAME_META[P.g][2] : 'Lời cảm ơn';
+
+const wordsHTML = (str, cls, off = 0) => str.split(' ').map((w, i) => `<span class="${cls}" style="--i:${i + off}">${w}</span>`).join(' ');
 
 /* ---------- Hàm vẽ ---------- */
 function vgrad(ctx, w, h, stops, y0 = 0, y1 = h) {
@@ -982,7 +1189,7 @@ const fx = {
   tick(dt) {
     if (!this.ctx) return;
     const ctx = this.ctx; ctx.clearRect(0, 0, this.w, this.h);
-    if (f === N) {
+    if (f >= N - 1) {
       this.acc += dt;
       const sr = $('#stage').getBoundingClientRect(), br = book.getBoundingClientRect();
       while (this.acc > .13) {
@@ -1008,34 +1215,57 @@ const intro = $('#intro'), env = $('#env'), app = $('#app'), stage = $('#stage')
 const prevBtn = $('#prev'), nextBtn = $('#next'), dotsEl = $('#dots'), labelEl = $('#label');
 let f = 0, mode = 'spread', leaves = [], scenes = [], texts = [], goTimer = null, lastSize = '';
 
-dotsEl.innerHTML = Array.from({ length: N }, (_, i) => `<button class="dot" type="button" aria-label="Lời chúc ${i + 1}: ${WISHES[i][0]}" data-n="${i + 1}"></button>`).join('');
+dotsEl.innerHTML = PAGES.map((P, i) => `<button class="dot${P.t === 'game' ? ' g' : ''}" type="button" aria-label="Trang ${i + 1}: ${pageLabel(P)}" data-n="${i + 1}"></button>`).join('');
 const dotEls = [...dotsEl.children];
 
 function coverHTML() {
   let petals = '';
   for (let i = 0; i < 8; i++) petals += `<ellipse cx="0" cy="-52" rx="22" ry="46" transform="rotate(${i * 45})"/>`;
   return `<svg class="cv-flower" viewBox="-100 -100 200 200" aria-hidden="true"><g fill="none" stroke="#f6d38a" stroke-width="1.2">${petals}<circle r="14"/><circle r="96"/></g></svg>
-  <div class="cv-in"><p class="cv-small">15 lời chúc · 20/10</p><h1 class="cv-title">Bốn mùa<br>yêu thương</h1><p class="cv-sub">Dành tặng những người phụ nữ tuyệt vời</p><p class="cv-hint">Chạm vào bìa để mở sách</p></div>`;
+  <div class="cv-in"><p class="cv-small">20/10 · lời chúc và vài bất ngờ</p><h1 class="cv-title">9 lời chúc<br>20/10</h1><p class="cv-sub">Dành tặng ${esc(NAME || 'bạn')}, người phụ nữ tuyệt vời</p><p class="cv-hint">Chạm vào bìa để mở sách</p></div>`;
 }
 
-function makeScene(n, w, h, dpr) {
-  const sc = new Scene(n, w, h, dpr); scenes[n] = sc; sc.canvas._sc = sc; return sc;
+function makeScene(n, sceneNo, w, h, dpr) {
+  const sc = new Scene(sceneNo, w, h, dpr); scenes[n] = sc; sc.canvas._sc = sc; return sc;
 }
 
-function buildText(face, n, single, sceneH, pw, dpr) {
-  const [t, sub, body] = WISHES[n - 1], fin = n === N;
-  face.classList.add('textpage'); if (fin) face.classList.add('final');
+function buildPage(face, n, single, ph, pw, dpr) {
+  const P = PAGES[n - 1], isWish = P.t === 'wish', isGame = P.t === 'game', isThanks = P.t === 'thanks';
+  face.classList.add('textpage');
+  if (isGame) face.classList.add('gamepage');
+  if (isThanks) face.classList.add('thanks');
+  if (isThanks || (isWish && P.w === WISHES.length - 1)) face.classList.add('final');
   if (single) {
+    const sceneH = Math.round(ph * (isWish ? (ph < 520 ? .34 : .42) : .13));
     face.style.setProperty('--sh', sceneH + 'px');
-    const wrap = el('div', 'sp-scene'); wrap.append(makeScene(n, pw - 20, sceneH - 10, dpr).canvas); face.append(wrap);
+    const wrap = el('div', 'sp-scene'); wrap.append(makeScene(n, P.sc, pw - 20, sceneH - 10, dpr).canvas); face.append(wrap);
   } else face.insertAdjacentHTML('beforeend', '<i class="frame"></i>');
   const inner = el('div', 'tp-in');
-  const pd = (1.55 + body.split(' ').length * .038 + .5).toFixed(2) + 's';
-  inner.innerHTML = `<h2 class="tp-title"><span>${t}</span></h2><p class="tp-sub">${sub}</p><i class="tp-rule"></i>
-    <p class="tp-body">${wordsHTML(body, 'w')}</p>
-    ${fin ? `<p class="tp-promise" style="--pd:${pd}">${wordsHTML(PROMISE, 'pw')}</p>` : ''}
-    <div class="tp-foot"><span class="folio">${n} / ${N}</span>${fin ? '<button class="restart" type="button">Đọc lại từ đầu</button>' : '<span class="tp-hint">Chạm để lật trang</span>'}</div>`;
+  const folio = `<span class="folio">${n} / ${N}</span>`;
+  if (isWish) {
+    const [t, sub, raw] = WISHES[P.w], body = fill(raw), promise = P.w === WISHES.length - 1;
+    const pd = (1.55 + body.split(' ').length * .038 + .5).toFixed(2) + 's';
+    inner.innerHTML = `<h2 class="tp-title"><span>${t}</span></h2><p class="tp-sub">${sub}</p><i class="tp-rule"></i>
+      <p class="tp-body">${wordsHTML(body, 'w')}</p>
+      ${promise ? `<p class="tp-promise" style="--pd:${pd}">${wordsHTML(fill(PROMISE), 'pw')}</p>` : ''}
+      <div class="tp-foot">${folio}<span class="tp-hint">Chạm để lật trang</span></div>`;
+  } else if (isGame) {
+    const [t, sub] = GAME_META[P.g];
+    inner.innerHTML = `<h2 class="tp-title"><span>${t}</span></h2><p class="tp-sub">${sub}</p><i class="tp-rule"></i>
+      <div class="game-ui game-body">${gameHTML(P.g)}</div>
+      <div class="tp-foot">${folio}<span class="tp-hint">Vuốt hoặc bấm mũi tên để sang trang</span></div>`;
+  } else {
+    const p2 = 'Cảm ơn vì đã kiên nhẫn bấm hết từng trang, và cảm ơn vì đã bấm “Có” (dù nút “Không” bạn cũng hông chọn được đâu haha😏).';
+    const p3 = fill('Chúc {n} một ngày 20/10 thật vui, ăn ngon, chụp ảnh đẹp, và đừng quên nhận lời khen nhé.');
+    const c2 = p2.split(' ').length, sd = (1.55 + (c2 + p3.split(' ').length) * .038 + .3).toFixed(2) + 's';
+    inner.innerHTML = `<h2 class="tp-title"><span>Cảm ơn người đẹp nhé! 🌸</span></h2><i class="tp-rule"></i>
+      <p class="tp-body">${wordsHTML(p2, 'w')}</p>
+      <p class="tp-body">${wordsHTML(p3, 'w', c2)}</p>
+      <p class="author sign" style="--sd:${sd}">— Nguyễn Anh Hào</p>
+      <div class="tp-foot">${folio}<button class="restart" type="button">Đọc lại từ đầu</button></div>`;
+  }
   face.append(inner); texts[n] = face;
+  if (isGame) initGame(face, P.g);
 }
 
 function fit() {
@@ -1048,7 +1278,7 @@ function fit() {
 }
 
 function build() {
-  clearTimeout(goTimer);
+  clearTimeout(goTimer); G.meter.token++; if (G.meter.state === 'running') G.meter.state = 'idle';
   const st = stage.getBoundingClientRect();
   const availW = st.width - 24, availH = st.height - 18;
   let pw, ph;
@@ -1066,8 +1296,8 @@ function build() {
     const leafEl = el('div', 'leaf'), front = el('div', 'face front'), back = el('div', 'face back');
     leafEl.append(front, back);
     if (i === 0) { front.classList.add('cover'); front.innerHTML = coverHTML(); }
-    else buildText(front, i, mode === 'single', sceneH, pw, dpr);
-    if (mode === 'spread' && i < N) { back.classList.add('scenepage'); back.append(makeScene(i + 1, pw, ph, dpr).canvas); }
+    else buildPage(front, i, mode === 'single', ph, pw, dpr);
+    if (mode === 'spread' && i < N) { back.classList.add('scenepage'); back.append(makeScene(i + 1, PAGES[i].sc, pw, ph, dpr).canvas); }
     else back.classList.add('blank');
     book.append(leafEl); leaves.push(leafEl);
   }
@@ -1101,10 +1331,249 @@ function goTo(n) {
   step();
 }
 
+/* ---------- Trò chơi ---------- */
+const FLOWERS = [
+  ['🌹', 'Hoa hồng', 'Đẹp thật, nhưng chưa phải đáp án đâu 😌'],
+  ['🌻', 'Hướng dương', 'Rực rỡ ghê, mà vẫn sai nha 🌻'],
+  ['🌷', 'Hoa tulip', 'Gần đúng rồi... mà vẫn sai 😏'],
+  ['🌸', 'Hoa anh đào', 'Hết hoa rồi mà vẫn sai, lạ ghê 🤔']
+];
+const NOPE_TEASE = [
+  '{N} ơi, bấm trượt rồi 😏',
+  'Nút này bị lỗi, bấm nút kia đi',
+  'Bấm lần nữa xem nào 🤭',
+  'Thôi đừng cố, nó không muốn bị bấm đâu',
+  'Nút “Không” bỏ trốn luôn rồi, còn mỗi nút “Có” thôi 😎'
+];
+const AGE_TEASE = [
+  'À, 18 tuổi thôi hả? Trẻ quá trời luôn 😳',
+  'Kéo nữa cũng vậy, 18 là 18 nha 😏',
+  'Thanh kéo bị hư rồi, nó chỉ chịu 18 thôi 🤭',
+  '{N} trẻ mãi không già, bí quyết là gì vậy 🌸'
+];
+const FORTUNES = [
+  'Hôm nay trà sữa sẽ đúng vị, không bị nhạt.',
+  'Đồ ăn giao tới nóng hổi, đúng món bạn đặt.',
+  'Có người sắp rủ bạn đi ăn món bạn đang thèm.',
+  'Hôm nay ăn gì cũng không lên cân.',
+  'Hôm nay bạn sẽ được khen xinh, nhớ nhận lời khen nhé.',
+  'Tóc hôm nay tự vào nếp, không cần chỉnh.',
+  'Ra đường có ánh sáng đẹp, chụp tấm nào cũng ưng.',
+  'Da hôm nay sáng mịn, không có mụn nào dám mọc.',
+  'Hôm nay đi đâu cũng gặp đèn xanh.',
+  'Vừa tới nơi là xe buýt, thang máy đã chờ sẵn.',
+  'Sắp có tin vui, nhưng đừng hỏi là tin gì.',
+  'Wifi hôm nay mạnh bất thường, xem phim không bị đứng.',
+  'Món đồ bạn thích sắp được sale, đúng lúc luôn.',
+  'Deadline sắp tới sẽ được lùi ngày.',
+  'Sếp, thầy cô hôm nay tâm trạng rất tốt.',
+  'Bài khó mấy cũng làm được, đoán đâu trúng đó.',
+  'Tối nay ngủ một mạch tới sáng, không bị giật mình.',
+  'Cuối tuần này sẽ có một buổi sáng được ngủ nướng thỏa thích.',
+  'Có người đang nhắc tới bạn, không cần biết là ai.',
+  'Tin nhắn bạn đang chờ sẽ tới sớm hơn bạn nghĩ.'
+];
+
+function burstAt(elm) {
+  const sr = stage.getBoundingClientRect(), r = elm.getBoundingClientRect();
+  fx.burst(r.left + r.width / 2 - sr.left, r.top + r.height / 2 - sr.top);
+}
+
+function gameHTML(id) {
+  if (id === 'flower') {
+    const L = 'ABCD', Fl = G.flower, showReal = Fl.done || Fl.wrong.length >= 4;
+    return `<p class="g-q">Trong những loại hoa dưới đây, loài hoa nào đẹp nhất?</p>
+      <div class="opts">${FLOWERS.map((f, i) => `<button type="button" class="opt${Fl.wrong.includes(i) ? ' wrong' : ''}" data-i="${i}"><i class="ltr">${L[i]}</i><span class="e">${f[0]}</span>${f[1]}</button>`).join('')}
+        <button type="button" class="opt real${showReal ? ' show' : ''}${Fl.done ? ' win' : ''}" id="qReal"><i class="ar">➜</i> ${NAME ? 'Là bạn đó, ' + esc(NAME) + '!' : 'Là bạn đó!'} 💖</button></div>
+      <p class="g-msg" id="qMsg"></p>`;
+  }
+  if (id === 'meter') {
+    return `<p class="g-q">Chạm nút để đo độ xinh đẹp của ${esc(NAME || 'bạn')}</p>
+      <div class="m-track" id="mTrack"><i class="m-bar" id="mBar"></i><b class="m-pct" id="mPct">0%</b></div>
+      <p class="g-msg" id="mSt"></p>
+      <button type="button" class="g-btn" id="mGo">Bắt đầu đo ✨</button>`;
+  }
+  if (id === 'age') {
+    return `<p class="g-q">Bạn bao nhiêu tuổi nhỉ? Kéo thanh bên dưới nha</p>
+      <div class="age-box"><b id="aNum">${G.age.n ? 18 : 25}</b><span>tuổi</span></div>
+      <input type="range" class="age-rng" id="aRng" min="1" max="60" step="1" value="${G.age.n ? 18 : 25}" aria-label="Tuổi">
+      <p class="g-msg" id="aMsg"></p>`;
+  }
+  if (id === 'nope') {
+    return `<p class="g-q">Bạn có thích mấy lời chúc này không?</p>
+      <div class="nope-zone" id="nZone">
+        <button type="button" class="g-btn yes" id="nYes">Có 💖</button>
+        <button type="button" class="g-btn no" id="nNo">Không</button>
+      </div>
+      <p class="g-msg" id="nMsg"></p>`;
+  }
+  return `<div class="f-stage">
+      <button type="button" class="gift" id="fGift" aria-label="Mở hộp quà">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <rect x="20" y="58" width="80" height="54" rx="5" fill="#ee5f8e"/>
+          <rect x="54" y="58" width="12" height="54" fill="#ffd45e"/>
+          <g class="lid">
+            <rect x="14" y="40" width="92" height="22" rx="5" fill="#c81f59"/>
+            <rect x="54" y="40" width="12" height="22" fill="#ffd45e"/>
+            <path d="M60 40 C40 12 20 30 44 40 Z" fill="#ffd45e"/>
+            <path d="M60 40 C80 12 100 30 76 40 Z" fill="#ffd45e"/>
+          </g>
+        </svg>
+      </button>
+      <div class="f-card" id="fCard"><small id="fHead"></small><p id="fText"></p></div>
+    </div>
+    <p class="g-msg" id="fMsg"></p>
+    <button type="button" class="g-btn" id="fAgain" style="visibility:hidden">Bốc quẻ khác 🎲</button>`;
+}
+
+function initGame(face, id) {
+  const $$ = s => face.querySelector(s);
+  const hint = $$('.tp-hint');
+  const doneFn = { flower: () => G.flower.done, meter: () => G.meter.state === 'done', nope: () => G.nope.yes, fortune: () => G.fortune.last >= 0, age: () => G.age.n > 0 }[id];
+  face._done = doneFn;
+  const sync = () => { if (doneFn()) hint.textContent = 'Xong rồi, chạm để lật trang ➜'; };
+  sync();
+
+  if (id === 'flower') {
+    const Fl = G.flower, msg = $$('#qMsg'), real = $$('#qReal');
+    msg.textContent = Fl.msg || 'Chọn một đáp án nha 👇';
+    face.querySelectorAll('.opt[data-i]').forEach(b => b.addEventListener('click', () => {
+      if (Fl.done) return;
+      const i = +b.dataset.i;
+      if (!Fl.wrong.includes(i)) Fl.wrong.push(i);
+      b.classList.remove('wrong'); void b.offsetWidth; b.classList.add('wrong');
+      let m = txt(FLOWERS[i][2]);
+      if (Fl.wrong.length >= 4) { m += ' Khoan, hình như còn một đáp án nữa!'; setTimeout(() => real.classList.add('show'), 600); }
+      Fl.msg = m; msg.textContent = m;
+    }));
+    real.addEventListener('click', () => {
+      if (!real.classList.contains('show')) return;
+      Fl.done = true; real.classList.add('win');
+      Fl.msg = txt('Đúng rồi! {N} đẹp nhất luôn, không cần bàn cãi 🌸'); msg.textContent = Fl.msg; sync();
+      burstAt(real); setTimeout(() => burstAt(real), 250);
+    });
+  }
+
+  if (id === 'meter') {
+    const M = G.meter, track = $$('#mTrack'), bar = $$('#mBar'), pct = $$('#mPct'), st = $$('#mSt'), go = $$('#mGo');
+    const set = (v, m) => { bar.style.width = v + '%'; pct.textContent = Math.round(v) + '%'; if (m !== undefined) st.textContent = m; };
+    const done = anim => {
+      M.state = 'done'; sync(); track.classList.add('over'); bar.style.width = '100%'; pct.textContent = 'ERROR';
+      st.textContent = txt('⚠️ Vượt giới hạn đo! {N} xinh quá nên máy quá tải rồi 💥');
+      go.textContent = 'Đo lại cho chắc 😏'; go.style.visibility = 'visible';
+      if (anim) { burstAt(track); setTimeout(() => burstAt(track), 300); }
+    };
+    if (M.state === 'done') done(false); else st.textContent = 'Chạm nút để bắt đầu đo';
+    go.addEventListener('click', () => {
+      if (M.state === 'running') return;
+      M.state = 'running'; const tk = ++M.token;
+      track.classList.remove('over'); go.style.visibility = 'hidden'; set(0, 'Đang quét nhan sắc…');
+      const steps = [[0, 50, 1200, 'Đang quét nhan sắc…'], [50, 50, 300], [50, 80, 1200, 'Đang tính điểm duyên dáng…'], [80, 80, 300],
+        [80, 99, 1000, 'Đang đo độ dễ thương…'], [99, 99, 1600, '99%… sao đứng yên vậy ta? 🤨']];
+      let i = 0;
+      const next = () => {
+        if (M.token !== tk) return;
+        if (i >= steps.length) { done(true); return; }
+        const [a, b, d, m] = steps[i++], t0 = performance.now();
+        if (m) st.textContent = m;
+        const tick = now => {
+          if (M.token !== tk) return;
+          const k = Math.min(1, (now - t0) / d);
+          set(a + (b - a) * (k * (2 - k)));
+          if (k < 1) requestAnimationFrame(tick); else next();
+        };
+        requestAnimationFrame(tick);
+      };
+      next();
+    });
+  }
+
+  if (id === 'nope') {
+    const S = G.nope, zone = $$('#nZone'), yes = $$('#nYes'), no = $$('#nNo'), msg = $$('#nMsg');
+    let lastFlee = 0;
+    const apply = () => {
+      const c = Math.min(S.n, 5);
+      yes.style.setProperty('--ys', S.yes ? 1.5 : (1 + c * .12).toFixed(2));
+      if (S.yes || S.n >= 5) no.classList.add('gone'); else no.style.setProperty('--ns', (1 - c * .16).toFixed(2));
+    };
+    msg.textContent = S.msg || 'Chọn đi nào 👇';
+    apply();
+    const flee = e => {
+      const now = performance.now();
+      if (S.yes || S.n >= 5 || now - lastFlee < 300) return;
+      lastFlee = now; S.n++;
+      const zr = zone.getBoundingClientRect(), nr = no.getBoundingClientRect(), yr = yes.getBoundingClientRect();
+      const px = e && e.detail !== 0 && e.clientX !== undefined ? e.clientX : null, py = px === null ? null : e.clientY;
+      let best = null;
+      for (let t = 0; t < 14; t++) {
+        const cx = nr.width / 2 + Math.random() * Math.max(0, zr.width - nr.width), cy = nr.height / 2 + Math.random() * Math.max(0, zr.height - nr.height);
+        const gx = zr.left + cx, gy = zr.top + cy;
+        const far = px === null || Math.hypot(gx - px, gy - py) > 90;
+        const hit = gx + nr.width / 2 > yr.left - 8 && gx - nr.width / 2 < yr.right + 8 && gy + nr.height / 2 > yr.top - 8 && gy - nr.height / 2 < yr.bottom + 8;
+        best = { cx, cy }; if (far && !hit) break;
+      }
+      no.style.left = best.cx + 'px'; no.style.top = best.cy + 'px';
+      S.msg = txt(NOPE_TEASE[S.n - 1]); msg.textContent = S.msg; apply();
+    };
+    no.addEventListener('pointerdown', e => { e.preventDefault(); flee(e); });
+    no.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') flee(e); });
+    no.addEventListener('click', e => { e.preventDefault(); flee(e); });
+    yes.addEventListener('click', () => {
+      S.yes = true; S.msg = 'Tôi biết mà 😎'; msg.textContent = S.msg; apply(); sync();
+      burstAt(yes); setTimeout(() => burstAt(yes), 250);
+    });
+  }
+
+  if (id === 'age') {
+    const A = G.age, rng = $$('#aRng'), num = $$('#aNum'), msg = $$('#aMsg');
+    let timer = 0, raf = 0;
+    msg.textContent = A.msg || 'Kéo thử xem nào 👇';
+    const finish = () => {
+      rng.value = 18; num.textContent = 18; A.n++; sync();
+      A.msg = txt(AGE_TEASE[Math.min(A.n - 1, AGE_TEASE.length - 1)]); msg.textContent = A.msg;
+      num.classList.remove('pop'); void num.offsetWidth; num.classList.add('pop'); burstAt(num);
+    };
+    const snap = () => {
+      cancelAnimationFrame(raf);
+      const from = +rng.value, t0 = performance.now(), d = 450;
+      const step = now => {
+        const k = Math.min(1, (now - t0) / d), v = from + (18 - from) * (1 - Math.pow(1 - k, 3));
+        rng.value = v; num.textContent = rng.value;
+        if (k < 1) raf = requestAnimationFrame(step); else finish();
+      };
+      raf = requestAnimationFrame(step);
+    };
+    rng.addEventListener('input', () => { cancelAnimationFrame(raf); num.textContent = rng.value; clearTimeout(timer); timer = setTimeout(snap, 500); });
+    rng.addEventListener('change', () => { clearTimeout(timer); timer = setTimeout(snap, 150); });
+  }
+
+  if (id === 'fortune') {
+    const F = G.fortune, gift = $$('#fGift'), card = $$('#fCard'), text = $$('#fText'), msg = $$('#fMsg'), again = $$('#fAgain');
+    let busy = false;
+    $$('#fHead').textContent = txt('Quẻ của {n} hôm nay');
+    const showCard = i => { text.textContent = FORTUNES[i]; card.classList.remove('show'); void card.offsetWidth; card.classList.add('show'); };
+    const after = () => { sync(); again.style.visibility = 'visible'; msg.textContent = 'Muốn quẻ khác thì bốc tiếp nha 👇'; };
+    if (F.last >= 0) { gift.classList.add('open', 'away'); text.textContent = FORTUNES[F.last]; card.classList.add('show'); after(); }
+    else msg.textContent = 'Chạm vào hộp quà để bốc quẻ 🎁';
+    const draw = () => {
+      if (busy) return; busy = true;
+      let i; do { i = Math.floor(Math.random() * FORTUNES.length); } while (i === F.last);
+      F.last = i;
+      if (!gift.classList.contains('away')) {
+        gift.classList.add('shake');
+        setTimeout(() => { gift.classList.remove('shake'); gift.classList.add('open'); burstAt(gift); }, 650);
+        setTimeout(() => { gift.classList.add('away'); showCard(i); after(); busy = false; }, 1050);
+      } else { showCard(i); burstAt(card); busy = false; }
+    };
+    gift.addEventListener('click', draw); again.addEventListener('click', draw);
+  }
+}
+
 /* ---------- Sự kiện ---------- */
-let swiped = false, sx = 0, sy = 0;
-stage.addEventListener('pointerdown', e => { sx = e.clientX; sy = e.clientY; });
+let swiped = false, noSwipe = false, sx = 0, sy = 0;
+stage.addEventListener('pointerdown', e => { sx = e.clientX; sy = e.clientY; noSwipe = !!e.target.closest('input[type=range]'); });
 stage.addEventListener('pointerup', e => {
+  if (noSwipe) return;
   const dx = e.clientX - sx, dy = e.clientY - sy;
   if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.5) { go(dx < 0 ? 1 : -1); swiped = true; setTimeout(() => { swiped = false; }, 80); }
 });
@@ -1115,10 +1584,12 @@ stage.addEventListener('click', e => {
   if (cv && cv._sc) {
     const sc = cv._sc, r = cv.getBoundingClientRect();
     sc.burst((e.clientX - r.left) * (sc.w / r.width), (e.clientY - r.top) * (sc.h / r.height));
-    if (f === N) fx.burst(e.clientX - sr.left, e.clientY - sr.top);
+    if (f >= N - 1) fx.burst(e.clientX - sr.left, e.clientY - sr.top);
     return;
   }
   if (e.target.closest('.restart')) { goTo(0); return; }
+  const gp = e.target.closest('.gamepage');
+  if (gp) { if (gp._done && gp._done() && !e.target.closest('button, input')) go(1); return; }
   const face = e.target.closest('.face');
   if (face && (face.classList.contains('cover') || face.classList.contains('textpage'))) {
     if (f === N) fx.burst(e.clientX - sr.left, e.clientY - sr.top); else go(1);
@@ -1133,14 +1604,30 @@ document.addEventListener('keydown', e => {
   else if (e.key === 'ArrowLeft' || e.key === 'PageUp') go(-1);
 });
 
-/* ---------- Phong bì ---------- */
-$('#lt1').innerHTML = wordsHTML('Gửi những người phụ nữ tuyệt vời…', 'lw');
-let opened = false;
+/* ---------- Phong bì & nhập tên ---------- */
+const nameForm = $('#nameForm'), nameIn = $('#nameIn'), nameRow = $('#nfRow'), nameLabel = $('#nfLabel');
+let opened = false, named = false;
+function submitName() {
+  if (named) return; named = true;
+  NAME = cleanName(nameIn.value);
+  $('#lt1').innerHTML = wordsHTML(`Gửi ${esc(NAME || 'bạn')}, người phụ nữ tuyệt vời…`, 'lw');
+  $('#lt2').textContent = `9 lời chúc và vài trò vui đang chờ ${NAME || 'bạn'} bên trong.`;
+  nameIn.blur(); nameForm.classList.add('done'); env.classList.remove('locked');
+  $('#hint').classList.remove('gone'); env.setAttribute('aria-label', 'Chạm để mở phong bì');
+  build();
+}
 function openEnv() {
+  if (!named) {
+    nameLabel.textContent = 'Nhập tên trước đã nè 😏';
+    nameRow.classList.remove('shake'); void nameRow.offsetWidth; nameRow.classList.add('shake'); nameIn.focus();
+    return;
+  }
   if (opened) return; opened = true;
   env.classList.add('open'); $('#hint').classList.add('gone'); env.setAttribute('aria-label', 'Phong bì đã mở');
   setTimeout(() => $('#cta').classList.add('show'), reduce ? 200 : 3700);
 }
+$('#nameBtn').addEventListener('click', submitName);
+nameIn.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); submitName(); } });
 env.addEventListener('click', openEnv);
 env.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openEnv(); } });
 $('#cta').addEventListener('click', () => {
